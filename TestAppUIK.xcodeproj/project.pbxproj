@@ -16,6 +16,8 @@
 		BA3D23BA2C036150006DFCDA /* TestAppUIKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23B92C036150006DFCDA /* TestAppUIKUITestsLaunchTests.swift */; };
 		BA3D23C72C03626C006DFCDA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23C62C03626C006DFCDA /* LogInViewController.swift */; };
 		BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */; };
+		BA3D23CB2C03835B006DFCDA /* TextFiledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */; };
+		BA3D23CD2C038B4C006DFCDA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BA3D23B92C036150006DFCDA /* TestAppUIKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUIKUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BA3D23C62C03626C006DFCDA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCompanyViewController.swift; sourceTree = "<group>"; };
+		BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledView.swift; sourceTree = "<group>"; };
+		BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				BA3D23962C03614F006DFCDA /* AppDelegate.swift */,
 				BA3D23C62C03626C006DFCDA /* LogInViewController.swift */,
 				BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */,
+				BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */,
+				BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */,
 				BA3D239A2C03614F006DFCDA /* ViewController.swift */,
 				BA3D239F2C036150006DFCDA /* Assets.xcassets */,
 				BA3D23A12C036150006DFCDA /* LaunchScreen.storyboard */,
@@ -259,8 +265,10 @@
 			files = (
 				BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */,
 				BA3D239B2C03614F006DFCDA /* ViewController.swift in Sources */,
+				BA3D23CD2C038B4C006DFCDA /* ButtonView.swift in Sources */,
 				BA3D23972C03614F006DFCDA /* AppDelegate.swift in Sources */,
 				BA3D23C72C03626C006DFCDA /* LogInViewController.swift in Sources */,
+				BA3D23CB2C03835B006DFCDA /* TextFiledView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,26 +15,20 @@ class LogInViewController: UIViewController {
     }()
     
     private lazy var logInTF: UITextField = {
-        let textField = UITextField()
+        let textField = TextFiledView()
         textField.placeholder = "Ваш логин"
-        textField.borderStyle = .roundedRect
         return textField
     }()
     
     private lazy var passwordTF: UITextField = {
-        let textField = UITextField()
+        let textField = TextFiledView()
         textField.placeholder = "Ваш пароль"
-        textField.borderStyle = .roundedRect
         return textField
     }()
     
     private lazy var logInButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(.blue)
+        let button = ButtonView()
         button.setTitle("Войти", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 4
         button.addTarget(self, action: #selector(enterInApp), for: .touchUpInside)
         return button
     }()

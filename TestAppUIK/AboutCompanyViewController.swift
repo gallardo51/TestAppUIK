@@ -35,5 +35,7 @@ class AboutCompanyViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        
+        navigationItem.backBarButtonItem = nil
     }
 }
