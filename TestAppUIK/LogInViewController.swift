@@ -114,7 +114,8 @@ class LogInViewController: UIViewController {
     }
     
     @objc private func enterInApp() {
-        let aboutCompanyVC = AboutCompanyViewController()
-        show(aboutCompanyVC, sender: self)
+        let tabBarVC = TabBarViewController()
+        tabBarVC.modalPresentationStyle = .fullScreen
+        present(tabBarVC, animated: true)
     }
 }

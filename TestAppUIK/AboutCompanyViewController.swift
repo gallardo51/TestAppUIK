@@ -13,6 +13,11 @@ class AboutCompanyViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setNavBar()
+        title = "О компании"
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     private func setNavBar() {
@@ -36,6 +41,6 @@ class AboutCompanyViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         
-        navigationItem.backBarButtonItem = nil
+        navigationItem.hidesBackButton = true
     }
 }
