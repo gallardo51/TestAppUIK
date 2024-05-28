@@ -8,12 +8,11 @@
 import UIKit
 
 class AboutCompanyViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setNavBar()
-        title = "О компании"
     }
     
     override func didReceiveMemoryWarning() {

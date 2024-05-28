@@ -1,5 +1,5 @@
 //
-//  ProductCollectionViewController.swift
+//  ProductViewController.swift
 //  TestAppUIK
 //
 //  Created by Александр Соболев on 27.05.2024.
@@ -11,12 +11,16 @@ private let reuseIdentifier = "Cell"
 
 class ProductCollectionViewController: UIViewController {
     var productCollectionView: UICollectionView?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Продукты"
         setNavBar()
-
+        setCollectionView()
+        
+    }
+    
+    private func setCollectionView() {
+        
         let view = UIView()
         view.backgroundColor = .white
         
@@ -71,7 +75,7 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
         return 4
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }

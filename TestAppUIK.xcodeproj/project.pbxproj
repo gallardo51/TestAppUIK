@@ -18,7 +18,7 @@
 		BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */; };
 		BA3D23CB2C03835B006DFCDA /* TextFiledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */; };
 		BA3D23CD2C038B4C006DFCDA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */; };
-		BACA92132C04BA9900079927 /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92122C04BA9900079927 /* ProductCollectionViewController.swift */; };
+		BACA92132C04BA9900079927 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92122C04BA9900079927 /* ProductViewController.swift */; };
 		BACA92152C04BB6900079927 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92142C04BB6900079927 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCompanyViewController.swift; sourceTree = "<group>"; };
 		BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledView.swift; sourceTree = "<group>"; };
 		BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		BACA92122C04BA9900079927 /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
+		BACA92122C04BA9900079927 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BACA92142C04BB6900079927 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +110,7 @@
 				BA3D23962C03614F006DFCDA /* AppDelegate.swift */,
 				BA3D23C62C03626C006DFCDA /* LogInViewController.swift */,
 				BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */,
-				BACA92122C04BA9900079927 /* ProductCollectionViewController.swift */,
+				BACA92122C04BA9900079927 /* ProductViewController.swift */,
 				BACA92142C04BB6900079927 /* TabBarViewController.swift */,
 				BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */,
 				BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */,
@@ -271,7 +271,7 @@
 			files = (
 				BACA92152C04BB6900079927 /* TabBarViewController.swift in Sources */,
 				BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */,
-				BACA92132C04BA9900079927 /* ProductCollectionViewController.swift in Sources */,
+				BACA92132C04BA9900079927 /* ProductViewController.swift in Sources */,
 				BA3D239B2C03614F006DFCDA /* ViewController.swift in Sources */,
 				BA3D23CD2C038B4C006DFCDA /* ButtonView.swift in Sources */,
 				BA3D23972C03614F006DFCDA /* AppDelegate.swift in Sources */,
@@ -455,6 +455,7 @@
 				INFOPLIST_FILE = TestAppUIK/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -482,6 +483,7 @@
 				INFOPLIST_FILE = TestAppUIK/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
