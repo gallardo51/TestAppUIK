@@ -20,6 +20,7 @@
 		BA3D23CD2C038B4C006DFCDA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */; };
 		BACA92132C04BA9900079927 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92122C04BA9900079927 /* ProductViewController.swift */; };
 		BACA92152C04BB6900079927 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92142C04BB6900079927 /* TabBarViewController.swift */; };
+		BACA92172C05E3A900079927 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92162C05E3A900079927 /* DiscountCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		BACA92122C04BA9900079927 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BACA92142C04BB6900079927 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		BACA92162C05E3A900079927 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				BACA92142C04BB6900079927 /* TabBarViewController.swift */,
 				BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */,
 				BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */,
+				BACA92162C05E3A900079927 /* DiscountCell.swift */,
 				BA3D239A2C03614F006DFCDA /* ViewController.swift */,
 				BA3D239F2C036150006DFCDA /* Assets.xcassets */,
 				BA3D23A12C036150006DFCDA /* LaunchScreen.storyboard */,
@@ -276,6 +279,7 @@
 				BA3D23CD2C038B4C006DFCDA /* ButtonView.swift in Sources */,
 				BA3D23972C03614F006DFCDA /* AppDelegate.swift in Sources */,
 				BA3D23C72C03626C006DFCDA /* LogInViewController.swift in Sources */,
+				BACA92172C05E3A900079927 /* DiscountCell.swift in Sources */,
 				BA3D23CB2C03835B006DFCDA /* TextFiledView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,8 +460,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,8 +487,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
