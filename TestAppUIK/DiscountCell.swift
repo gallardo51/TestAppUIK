@@ -28,10 +28,8 @@ class DiscountCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.layer.cornerRadius = 12
         contentView.addSubview(label)
         contentView.addSubview(image)
-//        setConstraints()
     }
     
     override func layoutSubviews() {
@@ -51,24 +49,6 @@ class DiscountCell: UICollectionViewCell {
             height: contentView.frame.size.height-30
         )
     }
-    
-//    private func setConstraints() {
-//        
-//        NSLayoutConstraint.activate([
-//            image.widthAnchor.constraint(equalToConstant: 120),
-//            image.heightAnchor.constraint(equalToConstant: 120)
-//        ])
-//        
-//        NSLayoutConstraint.activate([
-//            label.topAnchor.constraint(equalTo: image.bottomAnchor, constant: -20),
-//            label.leadingAnchor.constraint(equalTo: image.leadingAnchor, constant: -20),
-//            label.trailingAnchor.constraint(equalTo: image.trailingAnchor, constant: -20)
-//        ])
-//        
-//        self.addSubview(image)
-//        self.addSubview(label)
-//        
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

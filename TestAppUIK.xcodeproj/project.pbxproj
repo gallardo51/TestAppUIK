@@ -18,6 +18,7 @@
 		BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */; };
 		BA3D23CB2C03835B006DFCDA /* TextFiledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */; };
 		BA3D23CD2C038B4C006DFCDA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */; };
+		BA94D4752C0F7E88004DF866 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94D4742C0F7E88004DF866 /* SectionHeader.swift */; };
 		BACA92132C04BA9900079927 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92122C04BA9900079927 /* ProductViewController.swift */; };
 		BACA92152C04BB6900079927 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92142C04BB6900079927 /* TabBarViewController.swift */; };
 		BACA92172C05E3A900079927 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92162C05E3A900079927 /* DiscountCell.swift */; };
@@ -56,6 +57,7 @@
 		BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCompanyViewController.swift; sourceTree = "<group>"; };
 		BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledView.swift; sourceTree = "<group>"; };
 		BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		BA94D4742C0F7E88004DF866 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		BACA92122C04BA9900079927 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BACA92142C04BB6900079927 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BACA92162C05E3A900079927 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				BA3D23962C03614F006DFCDA /* AppDelegate.swift */,
 				BA3D23C62C03626C006DFCDA /* LogInViewController.swift */,
 				BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */,
+				BA94D4742C0F7E88004DF866 /* SectionHeader.swift */,
 				BACA92122C04BA9900079927 /* ProductViewController.swift */,
 				BACA92142C04BB6900079927 /* TabBarViewController.swift */,
 				BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */,
@@ -274,6 +277,7 @@
 			files = (
 				BACA92152C04BB6900079927 /* TabBarViewController.swift in Sources */,
 				BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */,
+				BA94D4752C0F7E88004DF866 /* SectionHeader.swift in Sources */,
 				BACA92132C04BA9900079927 /* ProductViewController.swift in Sources */,
 				BA3D239B2C03614F006DFCDA /* Model.swift in Sources */,
 				BA3D23CD2C038B4C006DFCDA /* ButtonView.swift in Sources */,
