@@ -21,9 +21,9 @@ class SectionHeader: UICollectionReusableView {
     }
     
     private func customizeElements() {
-        title.textColor = .black
-        title.backgroundColor = .lightGray
-        title.font = UIFont(name: "avenir", size: 20)
+        title.textColor = .lightGray
+        title.textAlignment = .justified
+        title.font = UIFont(name: "rockwell", size: 15)
         title.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -31,10 +31,8 @@ class SectionHeader: UICollectionReusableView {
         addSubview(title)
         
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: topAnchor),
-            title.leadingAnchor.constraint(equalTo: leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: trailingAnchor),
-            title.bottomAnchor.constraint(equalTo: bottomAnchor)
+            title.heightAnchor.constraint(equalToConstant: 40),
+            title.widthAnchor.constraint(equalToConstant: 400),
         ])
     }
     

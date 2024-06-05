@@ -11,15 +11,9 @@ private let reuseIdentifier = "Cell"
 
 class ProductCollectionViewController: UIViewController {
     
-    let headerRegistration = UICollectionView.SupplementaryRegistration<SectionHeader>(elementKind: "Header") { supplementaryView, elementKind, indexPath in
-        supplementaryView.title.text = "\(elementKind) for section \(indexPath.section)"
-    }
-    
     var productCollectionView: UICollectionView?
     
     private var products = Product.getProduct()
-    
-    var productIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +28,18 @@ class ProductCollectionViewController: UIViewController {
         view.backgroundColor = .white
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         layout.itemSize = CGSize(width: 110, height: 110)
-        //        layout.headerReferenceSize = CGSize(width: 20, height: 20)
+        layout.headerReferenceSize = CGSize(width: 20, height: 40)
         
         productCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         productCollectionView?.register(DiscountCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        productCollectionView?.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuserId)
+        productCollectionView?.register(SectionHeader.self,
+                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                        withReuseIdentifier: SectionHeader.reuserId)
+        
         productCollectionView?.backgroundColor = UIColor.white
+        
         productCollectionView?.dataSource = self
         productCollectionView?.delegate = self
         
@@ -81,12 +79,15 @@ class ProductCollectionViewController: UIViewController {
 }
 
 extension ProductCollectionViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 40)
-    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuserId, for: indexPath) as? SectionHeader {
-            sectionHeader.title.text = "\(products[indexPath.section].nameOfGroup)"
+        
+        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: SectionHeader.reuserId,
+            for: indexPath
+        ) as? SectionHeader {
+            sectionHeader.title.text = "      \(products[indexPath.section].nameOfGroup)"
             return sectionHeader
         }
         return UICollectionReusableView()
