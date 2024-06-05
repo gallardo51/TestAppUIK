@@ -15,10 +15,24 @@ class ProductCollectionViewController: UIViewController {
     
     private var products = Product.getProduct()
     
+    private var filteredProducts = Product.getProduct()
+    
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
+    private let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
         setCollectionView()
+        setupSearchController()
         
     }
     
@@ -100,12 +114,12 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products[section].item.count
+        return isFiltering ? filteredProducts[section].item.count : products[section].item.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DiscountCell
-        let product = products[indexPath.section].item[indexPath.item]
+        let product = isFiltering ? filteredProducts[indexPath.section].item[indexPath.item] : products[indexPath.section].item[indexPath.item]
         
         cell.label.text = product.name
         cell.image.image = UIImage(named: product.name)
@@ -118,6 +132,34 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
 }
 extension ProductCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let detailVC = DetailProductViewController()
+        let item = products[indexPath.section].item[indexPath.item]
+        detailVC.item = item
+        show(detailVC, sender: item)
     }
 }
+
+extension ProductCollectionViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        
+        filteredProducts = products.filter({ (product: Product) -> Bool in
+            return product.item[0].name.lowercased().contains(searchText.lowercased())
+        })
+    }
+    
+    private func setupSearchController() {
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+}
+
+

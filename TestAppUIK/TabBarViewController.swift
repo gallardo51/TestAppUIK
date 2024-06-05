@@ -16,11 +16,19 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.backgroundColor = UIColor.white
         
         let tabOne = UINavigationController(rootViewController: AboutCompanyViewController())
-        let tabOneBarItem = UITabBarItem(title: "О компании", image: UIImage(systemName: "list.clipboard"), selectedImage: UIImage(systemName: "list.clipboard.fill"))
+        let tabOneBarItem = UITabBarItem(
+            title: "О компании",
+            image: UIImage(systemName: "list.clipboard"),
+            selectedImage: UIImage(systemName: "list.clipboard.fill")
+        )
         tabOne.tabBarItem = tabOneBarItem
         
         let tabTwo = UINavigationController(rootViewController: ProductCollectionViewController())
-        let tabTwoBarItem = UITabBarItem(title: "Продукты", image: UIImage(systemName: "basket"), selectedImage: UIImage(systemName: "basket.fill"))
+        let tabTwoBarItem = UITabBarItem(
+            title: "Продукты",
+            image: UIImage(systemName: "basket"),
+            selectedImage: UIImage(systemName: "basket.fill")
+        )
         tabTwo.tabBarItem = tabTwoBarItem
         
         self.viewControllers = [tabOne, tabTwo]
@@ -28,6 +36,6 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
+     
     }
 }
