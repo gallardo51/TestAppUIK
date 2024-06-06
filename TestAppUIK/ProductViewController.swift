@@ -14,19 +14,18 @@ class ProductCollectionViewController: UIViewController {
     var productCollectionView: UICollectionView?
     
     private var products = Product.getProduct()
+    private var group: Product?
+    private var filteredProducts: [Item] = []
     
-    private var filteredProducts = Product.getProduct()
-    
+    private let searchController = UISearchController(searchResultsController: nil)
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
     }
-    
     private var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
     
-    private let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +75,7 @@ class ProductCollectionViewController: UIViewController {
             alpha: 194/255
         )
         
+        navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
@@ -114,12 +114,12 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return isFiltering ? filteredProducts[section].item.count : products[section].item.count
+        isFiltering ? filteredProducts.count : products[section].item.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DiscountCell
-        let product = isFiltering ? filteredProducts[indexPath.section].item[indexPath.item] : products[indexPath.section].item[indexPath.item]
+        let product = isFiltering ? filteredProducts[indexPath.item] : products[indexPath.section].item[indexPath.item]
         
         cell.label.text = product.name
         cell.image.image = UIImage(named: product.name)
@@ -133,7 +133,7 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
 extension ProductCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailProductViewController()
-        let item = products[indexPath.section].item[indexPath.item]
+        let item = isFiltering ? filteredProducts[indexPath.item] : products[indexPath.section].item[indexPath.item]
         detailVC.item = item
         show(detailVC, sender: item)
     }
@@ -147,9 +147,9 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
     
     private func filterContentForSearchText(_ searchText: String) {
         
-        filteredProducts = products.filter({ (product: Product) -> Bool in
-            return product.item[0].name.lowercased().contains(searchText.lowercased())
-        })
+        filteredProducts = group?.item.filter { item in
+            item.name.lowercased().contains(searchText.lowercased())
+        } ?? []
     }
     
     private func setupSearchController() {
@@ -157,8 +157,14 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Поиск"
+        searchController.searchBar.barTintColor = .white
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textField.font = UIFont.boldSystemFont(ofSize: 17)
+            textField.textColor = .white
+        }
     }
 }
 

@@ -9,7 +9,7 @@
 
 struct Product {
     let nameOfGroup: String
-    var item: [Item]
+    let item: [Item]
     
     static func getProduct() -> [Product] {
         [
