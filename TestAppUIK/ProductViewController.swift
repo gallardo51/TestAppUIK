@@ -74,8 +74,7 @@ class ProductCollectionViewController: UIViewController {
             blue: 192/255,
             alpha: 194/255
         )
-        
-        navBarAppearance.configureWithOpaqueBackground()
+
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
@@ -109,7 +108,7 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        products.count
+        isFiltering ? 0 : products.count
     }
     
     
@@ -148,8 +147,10 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
     private func filterContentForSearchText(_ searchText: String) {
         
         filteredProducts = group?.item.filter { item in
-            item.name.lowercased().contains(searchText.lowercased())
+                                                    item.name.lowercased().contains(searchText.lowercased())
         } ?? []
+        
+        productCollectionView?.reloadData()
     }
     
     private func setupSearchController() {
@@ -157,7 +158,6 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Поиск"
-        searchController.searchBar.barTintColor = .white
         navigationItem.searchController = searchController
         definesPresentationContext = true
         

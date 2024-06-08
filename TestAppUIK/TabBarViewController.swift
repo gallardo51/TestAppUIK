@@ -31,7 +31,15 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         )
         tabTwo.tabBarItem = tabTwoBarItem
         
-        self.viewControllers = [tabOne, tabTwo]
+        let tabThree = UINavigationController(rootViewController: QuizViewController())
+        let tabThreeBarItem = UITabBarItem(
+            title: "Опрос",
+            image: UIImage(systemName: "doc.questionmark"),
+            selectedImage: UIImage(systemName: "doc.questionmark.fill")
+        )
+        tabThree.tabBarItem = tabThreeBarItem
+        
+        self.viewControllers = [tabOne, tabTwo, tabThree]
         
     }
     
