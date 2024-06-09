@@ -8,6 +8,14 @@
 import UIKit
 
 class QuestionsViewController: UIViewController {
+    
+    private let questions = Question.getQuestions()
+    private var answersChosen: [Answer] = []
+    private var currentAnswers: [Answer] {
+        questions[questionIndex].answers
+    }
+    private var questionIndex = 0
+    
     private lazy var progressView: UIProgressView = {
         let progressView = UIProgressView()
         progressView.translatesAutoresizingMaskIntoConstraints = false
@@ -16,16 +24,14 @@ class QuestionsViewController: UIViewController {
     
     private lazy var questionLabel: UILabel = {
         let questionLabel = UILabel()
-        questionLabel.text = "Для этой цели мы просим Вас пройти короткий опрос, он поможет нам лучше узнать чем Вы пользуетесь и упростит подбор нужного для Вас продукта."
         questionLabel.font = .boldSystemFont(ofSize: 20)
         questionLabel.numberOfLines = 0
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
         return questionLabel
     }()
     
-    private lazy var answerLabel: UILabel = {
+    private lazy var answerLabels: UILabel = {
         let answerLabel = UILabel()
-        answerLabel.text = "Harmonize"
         answerLabel.numberOfLines = 0
         answerLabel.translatesAutoresizingMaskIntoConstraints = false
         return answerLabel
@@ -41,8 +47,8 @@ class QuestionsViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        stackView.spacing = 100
-        stackView.addArrangedSubview(answerLabel)
+        stackView.spacing = 140
+        stackView.addArrangedSubview(answerLabels)
         stackView.addArrangedSubview(switchAnswer)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -66,7 +72,7 @@ class QuestionsViewController: UIViewController {
     }
     
     private func setNavBar() {
-        title = "Вопрос №   из   "
+        title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let navBarAppearance = UINavigationBarAppearance()
@@ -94,6 +100,24 @@ class QuestionsViewController: UIViewController {
         }
     }
     
+    private func addAnswers() {
+        let numberOfAnswers = currentAnswers.count
+        
+        for answer in 1...numberOfAnswers {
+            let label = answerLabel
+            let switchAnswer = switchAnswer
+            label.text = answer.title
+            
+            for (switchAnswer, label) in zip(switchAnswer, currentAnswers) {
+                if switchAnswer.isOn {
+                    answersChosen.append(answer)
+                }
+            }
+            nextQuestion()
+        }
+            
+        }
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
@@ -110,8 +134,8 @@ class QuestionsViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 60),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60)
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
         NSLayoutConstraint.activate([
@@ -123,5 +147,35 @@ class QuestionsViewController: UIViewController {
     }
     
     @objc private func nextQuestion() {
+        questionIndex += 1
+        
+        if questionIndex < questions.count {
+            updateUI()
+            return
+        }
+    }
+}
+
+extension QuestionsViewController {
+    private func updateUI() {
+        
+        // Get current question
+        let currentQuestion = questions[questionIndex]
+        
+        // Set current question for question label
+        questionLabel.text = currentQuestion.title
+        
+        // Calculate progress
+        let totalProgress = Float(questionIndex) / Float(questions.count)
+        
+        // Set progress for question progress view
+        progressView.setProgress(totalProgress, animated: true)
+        
+    }
+    
+    private func showCurrentAnswers(with answers: [Answer]) {
+        for (label, answer) in zip(answerLabel, answers) {
+            answerLabel.text = answer.title
+        }
     }
 }
