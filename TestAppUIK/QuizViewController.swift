@@ -95,7 +95,8 @@ class QuizViewController: UIViewController {
     }
     
     @objc private func enterInQuiz() {
-        
+        let questionsVC = QuestionsViewController()
+        show(questionsVC, sender: self)
     }
 
 }
