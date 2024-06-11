@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA06EECC2C187EF60098A577 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06EECB2C187EF60098A577 /* ResultsViewController.swift */; };
 		BA3D23972C03614F006DFCDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23962C03614F006DFCDA /* AppDelegate.swift */; };
 		BA3D239B2C03614F006DFCDA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D239A2C03614F006DFCDA /* Model.swift */; };
 		BA3D23A02C036150006DFCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3D239F2C036150006DFCDA /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA06EECB2C187EF60098A577 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		BA3D23932C03614F006DFCDA /* TestAppUIK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAppUIK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3D23962C03614F006DFCDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA3D239A2C03614F006DFCDA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				BA94D4762C105B40004DF866 /* DetailProductViewController.swift */,
 				BAA5DA962C1468220095F6F8 /* QuizViewController.swift */,
 				BAA5DA982C15DE740095F6F8 /* QuestionsViewController.swift */,
+				BA06EECB2C187EF60098A577 /* ResultsViewController.swift */,
 				BACA92142C04BB6900079927 /* TabBarViewController.swift */,
 				BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */,
 				BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */,
@@ -287,6 +290,7 @@
 				BACA92152C04BB6900079927 /* TabBarViewController.swift in Sources */,
 				BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */,
 				BA94D4752C0F7E88004DF866 /* SectionHeader.swift in Sources */,
+				BA06EECC2C187EF60098A577 /* ResultsViewController.swift in Sources */,
 				BAA5DA972C1468220095F6F8 /* QuizViewController.swift in Sources */,
 				BAA5DA992C15DE740095F6F8 /* QuestionsViewController.swift in Sources */,
 				BACA92132C04BA9900079927 /* ProductViewController.swift in Sources */,
