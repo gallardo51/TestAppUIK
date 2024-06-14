@@ -41,13 +41,21 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
         let tabFore = UINavigationController(rootViewController: EmployeeViewController())
         let tabForeBarItem = UITabBarItem(
-            title: "Опрос",
+            title: "Сотрудники",
             image: UIImage(systemName: "person.3"),
             selectedImage: UIImage(systemName: "person.3.fill")
         )
         tabFore.tabBarItem = tabForeBarItem
         
-        self.viewControllers = [tabOne, tabTwo, tabThree, tabFore]
+        let tabFive = UINavigationController(rootViewController: UserViewController())
+        let tabFiveBarItem = UITabBarItem(
+            title: "Пользователь",
+            image: UIImage(systemName: "person.crop.circle"),
+            selectedImage: UIImage(systemName: "person.crop.circle.fill")
+        )
+        tabFive.tabBarItem = tabFiveBarItem
+        
+        self.viewControllers = [tabOne, tabTwo, tabThree, tabFore, tabFive]
         
     }
     
