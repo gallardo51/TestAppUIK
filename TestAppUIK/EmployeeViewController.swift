@@ -41,6 +41,8 @@ class EmployeeViewController: UITableViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         
+        navigationItem.hidesBackButton = true
+        
     }
 
     // MARK: - Table view data source
