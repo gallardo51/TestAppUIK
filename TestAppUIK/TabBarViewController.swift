@@ -39,7 +39,15 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         )
         tabThree.tabBarItem = tabThreeBarItem
         
-        self.viewControllers = [tabOne, tabTwo, tabThree]
+        let tabFore = UINavigationController(rootViewController: EmployeeViewController())
+        let tabForeBarItem = UITabBarItem(
+            title: "Опрос",
+            image: UIImage(systemName: "person.3"),
+            selectedImage: UIImage(systemName: "person.3.fill")
+        )
+        tabFore.tabBarItem = tabForeBarItem
+        
+        self.viewControllers = [tabOne, tabTwo, tabThree, tabFore]
         
     }
     
