@@ -95,7 +95,6 @@ class DetailProductViewController: UIViewController, UIScrollViewDelegate {
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
-        
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance

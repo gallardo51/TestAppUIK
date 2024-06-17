@@ -14,7 +14,6 @@ class ProductCollectionViewController: UIViewController {
     var productCollectionView: UICollectionView?
     
     private var products = Product.getProduct()
-    private var group: Product?
     private var filteredProducts: [Item] = []
     
     private let searchController = UISearchController(searchResultsController: nil)
@@ -74,7 +73,7 @@ class ProductCollectionViewController: UIViewController {
             blue: 192/255,
             alpha: 194/255
         )
-
+        
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
@@ -146,11 +145,24 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
     
     private func filterContentForSearchText(_ searchText: String) {
         
-        filteredProducts = group?.item.filter { item in
-                                                    item.name.lowercased().contains(searchText.lowercased())
-        } ?? []
+        for product in products {
+            filteredProducts = product.item.filter { item in
+                item.name.lowercased().contains(searchText.lowercased())}
+        }
         
+        
+        //        filteredProducts = group.filter { item in
+        //            item.name.lowercased().contains(searchText.lowercased())
+        //        } ?? []
+        
+        //        filteredProducts = group?.item.filter { item in
+        //            item.name.lowercased().contains(searchText.lowercased())
+        //        } ?? []
         productCollectionView?.reloadData()
+        productCollectionView?.updateConstraints()
+        print(filteredProducts)
+        
+        
     }
     
     private func setupSearchController() {
@@ -163,9 +175,9 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
         
         if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
             textField.font = UIFont.boldSystemFont(ofSize: 17)
-            textField.textColor = .white
+            textField.textColor = .lightGray
+            textField.backgroundColor = .white
         }
     }
 }
-
 

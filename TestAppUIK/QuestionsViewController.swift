@@ -359,13 +359,18 @@ class QuestionsViewController: UIViewController {
         for (switchAnswer, answer) in zip(switchAnswer, currentAnswers) {
             if switchAnswer.isOn {
                 answersChosen.append(answer)
-            }
+            } 
         }
         nextQuestion()
     }
     
     private func nextQuestion() {
         questionIndex += 1
+        
+        if questionIndex == 5 {
+            nextQuestionButton.setTitle("Завершить опрос", for: .normal)
+            nextQuestionButton.setTitleColor(.red, for: .normal)
+        }
         
         switchAnswer1.isOn = false
         switchAnswer2.isOn = false
@@ -381,6 +386,7 @@ class QuestionsViewController: UIViewController {
             return
         }
         
+        
         let resultsVC = ResultsViewController()
         resultsVC.answers = answersChosen
         resultsVC.modalPresentationStyle = .automatic
@@ -391,7 +397,7 @@ class QuestionsViewController: UIViewController {
 
 extension QuestionsViewController {
     private func updateUI() {
-
+        
         let currentQuestion = questions[questionIndex]
         questionLabel.text = currentQuestion.title
         
@@ -401,5 +407,6 @@ extension QuestionsViewController {
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         
         addAnswers(with: currentAnswers)
+        
     }
 }

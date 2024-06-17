@@ -129,84 +129,84 @@ struct Question {
                 title: "Какой композитный материал Вы используете при фронтальной работе?",
                 answers:
                     [
-                        Answer(title: "Harmonize"),
-                        Answer(title: "Estelite Sigma Quick"),
-                        Answer(title: "Estelite Asteria"),
-                        Answer(title: "Filtek Ultimate"),
-                        Answer(title: "Tetrci-n-Ceram"),
-                        Answer(title: "Ceram X Spheretec"),
-                        Answer(title: "Ceram X Neo Spectra"),
-                        Answer(title: "Igos")
+                        Answer(title: "Harmonize", questionNumber: .q1),
+                        Answer(title: "Estelite Sigma Quick", questionNumber: .q1),
+                        Answer(title: "Estelite Asteria", questionNumber: .q1),
+                        Answer(title: "Filtek Ultimate", questionNumber: .q1),
+                        Answer(title: "Tetrci-n-Ceram", questionNumber: .q1),
+                        Answer(title: "Ceram X Spheretec", questionNumber: .q1),
+                        Answer(title: "Ceram X Neo Spectra", questionNumber: .q1),
+                        Answer(title: "Igos", questionNumber: .q1)
                     ]
             ),
             Question(
                 title: "Какой адгезив Вы используете в работе?",
                 answers:
                     [
-                        Answer(title: "Optibond FL"),
-                        Answer(title: "Optibond Solo Plus"),
-                        Answer(title: "Optibond Universal"),
-                        Answer(title: "Bondforce 2"),
-                        Answer(title: "Bondforce Universal"),
-                        Answer(title: "G-Bond"),
-                        Answer(title: "Prime&Bond Universal"),
-                        Answer(title: "Prime&Bond гавно")
+                        Answer(title: "Optibond FL", questionNumber: .q2),
+                        Answer(title: "Optibond Solo Plus", questionNumber: .q2),
+                        Answer(title: "Optibond Universal", questionNumber: .q2),
+                        Answer(title: "Bondforce 2", questionNumber: .q3),
+                        Answer(title: "Bondforce Universal", questionNumber: .q2),
+                        Answer(title: "G-Bond", questionNumber: .q2),
+                        Answer(title: "Prime&Bond Universal", questionNumber: .q2),
+                        Answer(title: "Prime&Bond гавно", questionNumber: .q2)
                     ]
             ),
             Question(
                 title: "Какой композитный материал Вы используете при работе на жевательной группе зубов?",
                 answers:
                     [
-                        Answer(title: "Harmonize"),
-                        Answer(title: "Estelite Sigma Quick"),
-                        Answer(title: "Estelite Asteria"),
-                        Answer(title: "Filtek Ultimate"),
-                        Answer(title: "Tetrci-n-Ceram"),
-                        Answer(title: "Ceram X Spheretec"),
-                        Answer(title: "Ceram X Neo Spectra"),
-                        Answer(title: "Igos")
+                        Answer(title: "Harmonize", questionNumber: .q3 ),
+                        Answer(title: "Estelite Sigma Quick", questionNumber: .q3),
+                        Answer(title: "Estelite Asteria", questionNumber: .q3),
+                        Answer(title: "Filtek Ultimate", questionNumber: .q3),
+                        Answer(title: "Tetrci-n-Ceram", questionNumber: .q3),
+                        Answer(title: "Ceram X Spheretec", questionNumber: .q3),
+                        Answer(title: "Ceram X Neo Spectra", questionNumber: .q3),
+                        Answer(title: "Igos", questionNumber: .q3)
                     ]
             ),
             Question(
                 title: "Какой текучий композит Вы предпочитаете?",
                 answers:
                     [
-                        Answer(title: "Estelite Universal"),
-                        Answer(title: "Premise Flowable"),
-                        Answer(title: "S-Flow"),
-                        Answer(title: "SRD"),
-                        Answer(title: "Revolution"),
-                        Answer(title: "Estelite Flow Quick"),
-                        Answer(title: "Herculite Ultra Flow"),
-                        Answer(title: "Другое")
+                        Answer(title: "Estelite Universal", questionNumber: .q4),
+                        Answer(title: "Premise Flowable", questionNumber: .q4),
+                        Answer(title: "S-Flow", questionNumber: .q4),
+                        Answer(title: "SRD", questionNumber: .q4),
+                        Answer(title: "Revolution", questionNumber: .q4),
+                        Answer(title: "Estelite Flow Quick", questionNumber: .q4),
+                        Answer(title: "Herculite Ultra Flow", questionNumber: .q4),
+                        Answer(title: "Другое", questionNumber: .q4)
                     ]
             ),
             Question(
                 title: "Какой цемент Вы используете в работе?",
                 answers:
                     [
-                        Answer(title: "Maxcem Elite"),
-                        Answer(title: "Fuji I"),
-                        Answer(title: "Estecem"),
-                        Answer(title: "Fuji Plus"),
-                        Answer(title: "NX3"),
-                        Answer(title: "Ionotite F"),
-                        Answer(title: "Total Cem"),
-                        Answer(title: "Variolink")
+                        Answer(title: "Maxcem Elite", questionNumber: .q5),
+                        Answer(title: "Fuji I", questionNumber: .q5),
+                        Answer(title: "Estecem", questionNumber: .q5),
+                        Answer(title: "Fuji Plus", questionNumber: .q5),
+                        Answer(title: "NX3", questionNumber: .q5),
+                        Answer(title: "Ionotite F", questionNumber: .q5),
+                        Answer(title: "Total Cem", questionNumber: .q5),
+                        Answer(title: "Variolink", questionNumber: .q5)
                     ]
             ),
             Question(
                 title: "Что из представленных полировальных систем Вы используете чаще?",
                 answers:
                     [
-                        Answer(title: "Sof-Lex"),
-                        Answer(title: "Opti1step"),
-                        Answer(title: "Enchance"),
-                        Answer(title: "Occlubrush"),
-                        Answer(title: "Kagayaki"),
-                        Answer(title: "Optidisc"),
-                        Answer(title: "Meissinger"),
-                        Answer(title: "ТОР ВМ")
+                        Answer(title: "Sof-Lex", questionNumber: .q6),
+                        Answer(title: "Opti1step", questionNumber: .q6),
+                        Answer(title: "Enchance", questionNumber: .q6),
+                        Answer(title: "Occlubrush", questionNumber: .q6),
+                        Answer(title: "Kagayaki", questionNumber: .q6),
+                        Answer(title: "Optidisc", questionNumber: .q6),
+                        Answer(title: "Meissinger", questionNumber: .q6),
+                        Answer(title: "ТОР ВМ", questionNumber: .q6)
                     ]
             ),
         ]
@@ -215,6 +215,11 @@ struct Question {
 
 struct Answer {
     let title: String
+    let questionNumber: QuestionNumber
+}
+
+enum QuestionNumber {
+    case q1, q2, q3, q4, q5, q6
 }
 
 //MARK: - Employee
