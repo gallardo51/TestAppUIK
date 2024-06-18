@@ -99,6 +99,22 @@ class DetailProductViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         
+        setCustomBackButton()
+    }
+    
+    private func setCustomBackButton() {
+        let newBackButton = UIBarButtonItem(
+            title: "Назад",
+            style: .plain,
+            target: self, 
+            action: #selector(backAction)
+        )
+        navigationController?.navigationBar.topItem?.backBarButtonItem = newBackButton
+    
+    }
+    
+    @objc func backAction() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func setConstraints() {
