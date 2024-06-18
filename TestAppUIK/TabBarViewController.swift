@@ -60,6 +60,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-     
+     let transition = CATransition()
+        transition.type = .reveal
+        transition.subtype = .fromRight
+        transition.duration = 0.4
+        view.layer.add(transition, forKey: nil)
     }
 }
