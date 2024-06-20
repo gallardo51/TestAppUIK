@@ -24,7 +24,7 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
     }()
     
     private lazy var discountScrollView: UIScrollView = {
-        let scrollView = UIScrollView(frame: CGRect(x: 6, y: 155, width: 380, height: 120))
+        let scrollView = UIScrollView(frame: CGRect(x: 10, y: 10, width: 370, height: 120))
         scrollView.isPagingEnabled = true
         scrollView.layer.cornerRadius = 10
         scrollView.showsHorizontalScrollIndicator = false
@@ -32,7 +32,7 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
     }()
     
     private lazy var verticalScrollView: UIScrollView = {
-        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 300, width: 400, height: 1200))
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 160, width: 400, height: 1200))
         scrollView.isPagingEnabled = true
         return scrollView
     }()
@@ -50,29 +50,11 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         setNavBar()
-        setupSubviews(aboutCompanyText, pageControl, discountScrollView, verticalScrollView)
+        setupSubviews(verticalScrollView)
+        setupDiscountScrollView()
+        setupVerticalScrollView()
+        
         setConstraints()
-        
-        for index in 0..<discountImages.count {
-            frame.origin.x = discountScrollView.frame.size.width * CGFloat(index)
-            frame.size = discountScrollView.frame.size
-            let imageView = UIImageView(frame: frame)
-            imageView.image = UIImage(named: discountImages[index])
-            self.discountScrollView.addSubview(imageView)
-        }
-        
-        discountScrollView.contentSize = CGSize(
-            width: (discountScrollView.frame.size.width * CGFloat(discountImages.count)),
-            height: discountScrollView.frame.height
-        )
-        discountScrollView.delegate = self
-        
-        verticalScrollView.contentSize = CGSize(
-            width: verticalScrollView.frame.width,
-            height: 2700
-        )
-        self.verticalScrollView.addSubview(aboutCompanyText)
-        self.verticalScrollView.delegate = self
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -114,14 +96,39 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
         navigationItem.hidesBackButton = true
     }
     
+    private func setupDiscountScrollView() {
+        
+        for index in 0..<discountImages.count {
+            frame.origin.x = discountScrollView.frame.size.width * CGFloat(index)
+            frame.size = discountScrollView.frame.size
+            let imageView = UIImageView(frame: frame)
+            imageView.image = UIImage(named: discountImages[index])
+            self.discountScrollView.addSubview(imageView)
+        }
+        
+        discountScrollView.contentSize = CGSize(
+            width: (discountScrollView.frame.size.width * CGFloat(discountImages.count)),
+            height: discountScrollView.frame.height
+        )
+        discountScrollView.delegate = self
+        
+    }
+    
+    private func setupVerticalScrollView() {
+        
+        self.verticalScrollView.addSubview(discountScrollView)
+        self.verticalScrollView.addSubview(pageControl)
+        self.verticalScrollView.addSubview(aboutCompanyText)
+        self.verticalScrollView.delegate = self
+        
+        
+        verticalScrollView.contentSize = CGSize(
+            width: verticalScrollView.frame.width,
+            height: 2700
+        )
+    }
+    
     private func setConstraints() {
-        
-        NSLayoutConstraint.activate([
-            pageControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 280),
-            pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
-        
         
         NSLayoutConstraint.activate([
             verticalScrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
@@ -131,8 +138,13 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
         ])
         
         NSLayoutConstraint.activate([
-            aboutCompanyText.centerXAnchor.constraint(equalTo: verticalScrollView.centerXAnchor, constant: 0),
-            aboutCompanyText.topAnchor.constraint(equalTo: verticalScrollView.topAnchor, constant: 20),
+            pageControl.topAnchor.constraint(equalTo: verticalScrollView.topAnchor, constant: 130),
+            pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            aboutCompanyText.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 10),
             aboutCompanyText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             aboutCompanyText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
