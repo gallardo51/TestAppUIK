@@ -45,7 +45,7 @@ class ProductCollectionViewController: UIViewController {
         layout.headerReferenceSize = CGSize(width: 20, height: 40)
         
         productCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        productCollectionView?.register(DiscountCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        productCollectionView?.register(ProductCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         productCollectionView?.register(SectionHeader.self,
                                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                         withReuseIdentifier: SectionHeader.reuserId)
@@ -99,7 +99,7 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
             withReuseIdentifier: SectionHeader.reuserId,
             for: indexPath
         ) as? SectionHeader {
-            sectionHeader.title.text = "      \(products[indexPath.section].nameOfGroup)"
+            sectionHeader.title.text = isFiltering ? " " : "      \(products[indexPath.section].nameOfGroup)"
             return sectionHeader
         }
         return UICollectionReusableView()
@@ -107,7 +107,7 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        isFiltering ? 0 : products.count
+        isFiltering ? 1 : products.count
     }
     
     
@@ -116,7 +116,7 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DiscountCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProductCell
         let product = isFiltering ? filteredProducts[indexPath.item] : products[indexPath.section].item[indexPath.item]
         
         cell.label.text = product.name
@@ -145,26 +145,14 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
     
     private func filterContentForSearchText(_ searchText: String) {
         
-        for product in products {
-            filteredProducts = product.item.filter { item in
-                item.name.lowercased().contains(searchText.lowercased())}
+        filteredProducts = products.flatMap { $0.item.filter { item in
+            item.name.lowercased().contains(searchText.lowercased()) }
         }
         
-        
-        //        filteredProducts = group.filter { item in
-        //            item.name.lowercased().contains(searchText.lowercased())
-        //        } ?? []
-        
-        //        filteredProducts = group?.item.filter { item in
-        //            item.name.lowercased().contains(searchText.lowercased())
-        //        } ?? []
         productCollectionView?.reloadData()
-        productCollectionView?.updateConstraints()
         print(filteredProducts)
-        
-        
     }
-    
+        
     private func setupSearchController() {
         
         searchController.searchResultsUpdater = self
@@ -180,4 +168,5 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
         }
     }
 }
+
 

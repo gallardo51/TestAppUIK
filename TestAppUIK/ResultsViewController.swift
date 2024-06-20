@@ -93,8 +93,6 @@ class ResultsViewController: UIViewController {
         questionLabel.text = "Вопрос 1: \(titles.formatted(.list(type: .and, width: .narrow))) \n \nВопрос 2: \(titles2.formatted(.list(type: .and, width: .narrow))) \n \nВопрос 3: \(titles3.formatted(.list(type: .and, width: .narrow))) \n \nВопрос 4: \(titles4.formatted(.list(type: .and, width: .narrow))) \n \nВопрос 5: \(titles5.formatted(.list(type: .and, width: .narrow))) \n \nВопрос 6: \(titles6.formatted(.list(type: .and, width: .narrow)))"
     }
     
-    
-    
     @objc private func quiteFromQuiz() {
         dismiss(animated: true)
     }

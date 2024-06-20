@@ -29,7 +29,7 @@
 		BAA5DA992C15DE740095F6F8 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA5DA982C15DE740095F6F8 /* QuestionsViewController.swift */; };
 		BACA92132C04BA9900079927 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92122C04BA9900079927 /* ProductViewController.swift */; };
 		BACA92152C04BB6900079927 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92142C04BB6900079927 /* TabBarViewController.swift */; };
-		BACA92172C05E3A900079927 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92162C05E3A900079927 /* DiscountCell.swift */; };
+		BACA92172C05E3A900079927 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA92162C05E3A900079927 /* ProductCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		BAA5DA982C15DE740095F6F8 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		BACA92122C04BA9900079927 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		BACA92142C04BB6900079927 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		BACA92162C05E3A900079927 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		BACA92162C05E3A900079927 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 				BACA92142C04BB6900079927 /* TabBarViewController.swift */,
 				BA3D23CA2C03835B006DFCDA /* TextFiledView.swift */,
 				BA3D23CC2C038B4C006DFCDA /* ButtonView.swift */,
-				BACA92162C05E3A900079927 /* DiscountCell.swift */,
+				BACA92162C05E3A900079927 /* ProductCell.swift */,
 				BA4DE6992C1C219B0028A321 /* Extension + TableViewCell.swift */,
 				BA3D239A2C03614F006DFCDA /* Model.swift */,
 				BA3D239F2C036150006DFCDA /* Assets.xcassets */,
@@ -312,7 +312,7 @@
 				BA3D23972C03614F006DFCDA /* AppDelegate.swift in Sources */,
 				BA4DE6982C1C1F5D0028A321 /* EmployeeViewController.swift in Sources */,
 				BA3D23C72C03626C006DFCDA /* LogInViewController.swift in Sources */,
-				BACA92172C05E3A900079927 /* DiscountCell.swift in Sources */,
+				BACA92172C05E3A900079927 /* ProductCell.swift in Sources */,
 				BA4DE69A2C1C219B0028A321 /* Extension + TableViewCell.swift in Sources */,
 				BA94D4772C105B40004DF866 /* DetailProductViewController.swift in Sources */,
 				BA3D23CB2C03835B006DFCDA /* TextFiledView.swift in Sources */,

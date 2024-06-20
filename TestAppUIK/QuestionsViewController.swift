@@ -386,10 +386,14 @@ class QuestionsViewController: UIViewController {
             return
         }
         
+        if questionIndex == questions.count {
+            nextQuestionButton.isHidden = true
+        }
         
         let resultsVC = ResultsViewController()
         resultsVC.answers = answersChosen
         resultsVC.modalPresentationStyle = .automatic
+        resultsVC.modalTransitionStyle = .flipHorizontal
         present(resultsVC, animated: true)
         
     }
