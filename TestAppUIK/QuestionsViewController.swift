@@ -23,215 +23,158 @@ class QuestionsViewController: UIViewController {
         return progressView
     }()
     
-    private lazy var questionLabel: UILabel = {
-        let questionLabel = UILabel()
+    private lazy var questionLabel: CustomLabel = {
+        let questionLabel = CustomLabel()
         questionLabel.font = .boldSystemFont(ofSize: 20)
-        questionLabel.numberOfLines = 0
-        questionLabel.translatesAutoresizingMaskIntoConstraints = false
         return questionLabel
     }()
     
-    private lazy var answerLabel1: UILabel = {
-        let answerLabel = UILabel()
-        answerLabel.numberOfLines = 0
-        answerLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var answerLabel1: CustomLabel = {
+        let answerLabel = CustomLabel()
         return answerLabel
     }()
     
-    private lazy var answerLabel2: UILabel = {
-        let answerLabel = UILabel()
-        answerLabel.numberOfLines = 0
-        answerLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var answerLabel2: CustomLabel = {
+        let answerLabel = CustomLabel()
         return answerLabel
     }()
     
-    private lazy var answerLabel3: UILabel = {
-        let answerLabel = UILabel()
-        answerLabel.numberOfLines = 0
-        answerLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var answerLabel3: CustomLabel = {
+        let answerLabel = CustomLabel()
         return answerLabel
     }()
     
-    private lazy var answerLabel4: UILabel = {
-        let answerLabel = UILabel()
-        answerLabel.numberOfLines = 0
-        answerLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var answerLabel4: CustomLabel = {
+        let answerLabel = CustomLabel()
         return answerLabel
     }()
     
-    private lazy var answerLabel5: UILabel = {
-        let answerLabel = UILabel()
-        answerLabel.numberOfLines = 0
-        answerLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var answerLabel5: CustomLabel = {
+        let answerLabel = CustomLabel()
         return answerLabel
     }()
     
-    private lazy var answerLabel6: UILabel = {
-        let answerLabel = UILabel()
-        answerLabel.numberOfLines = 0
-        answerLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var answerLabel6: CustomLabel = {
+        let answerLabel = CustomLabel()
         return answerLabel
     }()
     
-    private lazy var answerLabel7: UILabel = {
-        let answerLabel = UILabel()
-        answerLabel.numberOfLines = 0
-        answerLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var answerLabel7: CustomLabel = {
+        let answerLabel = CustomLabel()
         return answerLabel
     }()
     
-    private lazy var answerLabel8: UILabel = {
-        let answerLabel = UILabel()
-        answerLabel.numberOfLines = 0
-        answerLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var answerLabel8: CustomLabel = {
+        let answerLabel = CustomLabel()
         return answerLabel
     }()
     
-    private lazy var switchAnswer1: UISwitch = {
-        let switchAnswer = UISwitch()
-        switchAnswer.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var switchAnswer1: CustomSwitch = {
+        let switchAnswer = CustomSwitch()
         return switchAnswer
     }()
     
-    private lazy var switchAnswer2: UISwitch = {
-        let switchAnswer = UISwitch()
-        switchAnswer.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var switchAnswer2: CustomSwitch = {
+        let switchAnswer = CustomSwitch()
         return switchAnswer
     }()
     
-    private lazy var switchAnswer3: UISwitch = {
-        let switchAnswer = UISwitch()
-        switchAnswer.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var switchAnswer3: CustomSwitch = {
+        let switchAnswer = CustomSwitch()
         return switchAnswer
     }()
     
-    private lazy var switchAnswer4: UISwitch = {
-        let switchAnswer = UISwitch()
-        switchAnswer.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var switchAnswer4: CustomSwitch = {
+        let switchAnswer = CustomSwitch()
         return switchAnswer
     }()
     
-    private lazy var switchAnswer5: UISwitch = {
-        let switchAnswer = UISwitch()
-        switchAnswer.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var switchAnswer5: CustomSwitch = {
+        let switchAnswer = CustomSwitch()
         return switchAnswer
     }()
     
-    private lazy var switchAnswer6: UISwitch = {
-        let switchAnswer = UISwitch()
-        switchAnswer.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var switchAnswer6: CustomSwitch = {
+        let switchAnswer = CustomSwitch()
         return switchAnswer
     }()
     
-    private lazy var switchAnswer7: UISwitch = {
-        let switchAnswer = UISwitch()
-        switchAnswer.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var switchAnswer7: CustomSwitch = {
+        let switchAnswer = CustomSwitch()
         return switchAnswer
     }()
     
-    private lazy var switchAnswer8: UISwitch = {
-        let switchAnswer = UISwitch()
-        switchAnswer.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var switchAnswer8: CustomSwitch = {
+        let switchAnswer = CustomSwitch()
         return switchAnswer
     }()
     
-    private lazy var stackView1: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+    private lazy var stackView1: CustomStackView = {
+        let stackView = CustomStackView()
         stackView.addArrangedSubview(answerLabel1)
         stackView.addArrangedSubview(switchAnswer1)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var stackView2: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+    private lazy var stackView2: CustomStackView = {
+        let stackView = CustomStackView()
         stackView.addArrangedSubview(answerLabel2)
         stackView.addArrangedSubview(switchAnswer2)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var stackView3: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+    private lazy var stackView3: CustomStackView = {
+        let stackView = CustomStackView()
         stackView.addArrangedSubview(answerLabel3)
         stackView.addArrangedSubview(switchAnswer3)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var stackView4: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+    private lazy var stackView4: CustomStackView = {
+        let stackView = CustomStackView()
         stackView.addArrangedSubview(answerLabel4)
         stackView.addArrangedSubview(switchAnswer4)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var stackView5: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+    private lazy var stackView5: CustomStackView = {
+        let stackView = CustomStackView()
         stackView.addArrangedSubview(answerLabel5)
         stackView.addArrangedSubview(switchAnswer5)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var stackView6: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+    private lazy var stackView6: CustomStackView = {
+        let stackView = CustomStackView()
         stackView.addArrangedSubview(answerLabel6)
         stackView.addArrangedSubview(switchAnswer6)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var stackView7: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+    private lazy var stackView7: CustomStackView = {
+        let stackView = CustomStackView()
         stackView.addArrangedSubview(answerLabel7)
         stackView.addArrangedSubview(switchAnswer7)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var stackView8: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+    private lazy var stackView8: CustomStackView = {
+        let stackView = CustomStackView()
         stackView.addArrangedSubview(answerLabel8)
         stackView.addArrangedSubview(switchAnswer8)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var nextQuestionButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Следующий вопрос >>>", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+    private lazy var nextQuestionButton: CustomButton = {
+        let button = CustomButton(
+            title: "Следующий вопрос >>>",
+            color: .systemBlue,
+            font: .systemFont(ofSize: 17),
+            background: .white)
         button.addTarget(
             self,
             action: #selector(answerButtonPressed),
             for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     

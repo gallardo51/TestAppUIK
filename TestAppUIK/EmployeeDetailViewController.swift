@@ -19,38 +19,35 @@ class EmployeeDetailViewController: UIViewController {
         return image
     }()
     
-    private lazy var employeeTitle: UILabel = {
-        let label = UILabel()
-        label.text = "\(employeeList.fullName)"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 20.0)
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var employeeTitle: CustomLabel = {
+        let label = CustomLabel(
+            title: "\(employeeList.fullName)",
+            alignment: .center,
+            textFont: .boldSystemFont(ofSize: 20.0))
         return label
     }()
     
-    private lazy var postTitle: UILabel = {
-        let label = UILabel()
-        label.text = "\(employeeList.post)"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var postTitle: CustomLabel = {
+        let label = CustomLabel(
+            title: "\(employeeList.post)",
+            alignment: .center,
+            textFont: .systemFont(ofSize: 17))
         return label
     }()
     
-    private lazy var cellphoneTitle: UILabel = {
-        let label = UILabel()
-        label.text = "\(employeeList.cellPhone)"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var cellphoneTitle: CustomLabel = {
+        let label = CustomLabel(
+            title: "\(employeeList.cellPhone)",
+            alignment: .natural,
+            textFont: .systemFont(ofSize: 17))
         return label
     }()
     
-    private lazy var emailTitle: UILabel = {
-        let label = UILabel()
-        label.text = "\(employeeList.email)"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var emailTitle: CustomLabel = {
+        let label = CustomLabel(
+            title: "\(employeeList.email)",
+            alignment: .natural,
+            textFont: .systemFont(ofSize: 17))
         return label
     }()
 

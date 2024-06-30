@@ -9,31 +9,30 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
+    private let companyInfo = CompanyInformation.getCompanyInfo()
+    
     var answers: [Answer]!
     
-    private lazy var viewTitle: UILabel = {
-        let viewTitle = UILabel()
-        viewTitle.font = .boldSystemFont(ofSize: 20)
-        viewTitle.textAlignment = .center
-        viewTitle.text = "Благодарим Вас за прохождения опроса! \n \nРезультаты:"
-        viewTitle.numberOfLines = 0
-        viewTitle.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var viewTitle: CustomLabel = {
+        let viewTitle = CustomLabel(
+            title: "\(companyInfo.companyThanks)",
+            alignment: .center,
+            textFont: .boldSystemFont(ofSize: 20))
         return viewTitle
     }()
     
-    private lazy var questionLabel: UILabel = {
-        let questionLabel = UILabel()
-        questionLabel.numberOfLines = 0
-        questionLabel.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var questionLabel: CustomLabel = {
+        let questionLabel = CustomLabel()
         return questionLabel
     }()
     
-    private lazy var quiteQuiz: UIButton = {
-        let button = UIButton()
-        button.setTitle("Выйти", for: .normal)
-        button.setTitleColor(.red, for: .normal)
+    private lazy var quiteQuiz: CustomButton = {
+        let button = CustomButton(
+            title: "Выйти",
+            color: .red,
+            font: .systemFont(ofSize: 17),
+            background: .white)
         button.addTarget(self, action: #selector(quiteFromQuiz), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     

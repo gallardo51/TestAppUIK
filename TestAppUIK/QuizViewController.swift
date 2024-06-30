@@ -8,6 +8,9 @@
 import UIKit
 
 class QuizViewController: UIViewController {
+    
+    private let companyInfo = CompanyInformation.getCompanyInfo()
+    
     private lazy var quizImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "person.crop.circle.badge.questionmark")
@@ -16,16 +19,20 @@ class QuizViewController: UIViewController {
         return image
     }()
     
-    private lazy var supportText: UILabel = {
-        let label = UILabel()
-        label.text = "Наша компания постоянно развивается. \nМы стремимся быть лучше для Вас и нацеленны предлагать продукты, которые помогут решить вопрос именно  в Вашей практике. \n \nДля этой цели мы просим Вас пройти короткий опрос, он поможет нам лучше узнать чем Вы пользуетесь и упростит подбор нужного для Вас продукта."
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var supportText: CustomLabel = {
+        let label = CustomLabel(
+            title: "\(companyInfo.companyAskes)",
+            alignment: .natural,
+            textFont: .systemFont(ofSize: 17))
         return label
     }()
     
     private lazy var startQuiz: CustomButton = {
-        let button = CustomButton(title: "Начать опрос", color: .white, font: .boldSystemFont(ofSize: 20), background: .systemBlue)
+        let button = CustomButton(
+            title: "Начать опрос",
+            color: .white,
+            font: .boldSystemFont(ofSize: 20),
+            background: .systemBlue)
         button.addTarget(self, action: #selector(enterInQuiz), for: .touchUpInside)
         return button
     }()

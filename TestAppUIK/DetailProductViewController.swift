@@ -12,7 +12,11 @@ class DetailProductViewController: UIViewController, UIScrollViewDelegate {
     var item: Item!
     
     private lazy var verticalScrollView: UIScrollView = {
-        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 400, height: 1200))
+        let scrollView = UIScrollView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: 400,
+            height: 1200))
         scrollView.isPagingEnabled = true
         return scrollView
     }()
@@ -25,29 +29,27 @@ class DetailProductViewController: UIViewController, UIScrollViewDelegate {
         return image
     }()
     
-    private lazy var productTitle: UILabel = {
-        let label = UILabel()
-        label.text = "\(item.name)"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 20.0)
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var productTitle: CustomLabel = {
+        let label = CustomLabel(
+            title: "\(item.name)",
+            alignment: .center,
+            textFont: .boldSystemFont(ofSize: 20.0))
         return label
     }()
     
-    private lazy var productDescription: UILabel = {
-        let label = UILabel()
-        label.text = "\(item.description)"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var productDescription: CustomLabel = {
+        let label = CustomLabel(
+            title: "\(item.description)",
+            alignment: .natural,
+            textFont: .systemFont(ofSize: 15))
         return label
     }()
     
-    private lazy var productAdvantage: UILabel = {
-        let label = UILabel()
-        label.text = "\(item.advantage)"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var productAdvantage: CustomLabel = {
+        let label = CustomLabel(
+            title: "\(item.advantage)",
+            alignment: .natural,
+            textFont: .systemFont(ofSize: 15))
         return label
     }()
     

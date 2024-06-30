@@ -17,37 +17,35 @@ class UserViewController: UIViewController {
         return image
     }()
     
-    private lazy var userFullName: UILabel = {
-        let label = UILabel()
-        label.text = "Александр Соболев"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 20.0)
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var userFullName: CustomLabel = {
+        let label = CustomLabel(
+            title: "Александр Соболев",
+            alignment: .center,
+            textFont: .boldSystemFont(ofSize: 20.0))
         return label
     }()
     
-    private lazy var birthdayDate: UILabel = {
-        let label = UILabel()
-        label.text = "08.07.1988"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var birthdayDate: CustomLabel = {
+        let label = CustomLabel(
+            title: "08.07.1988",
+            alignment: .natural,
+            textFont: .systemFont(ofSize: 17))
         return label
     }()
     
-    private lazy var cellphoneUser: UILabel = {
-        let label = UILabel()
-        label.text = "+7 961 029 75 02"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var cellphoneUser: CustomLabel = {
+        let label = CustomLabel(
+            title: "+7 961 029 75 02",
+            alignment: .natural,
+            textFont: .systemFont(ofSize: 17))
         return label
     }()
     
-    private lazy var emailUser: UILabel = {
-        let label = UILabel()
-        label.text = "31108@mail.ru"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var emailUser: CustomLabel = {
+        let label = CustomLabel(
+            title: "31108@mail.ru",
+            alignment: .natural,
+            textFont: .systemFont(ofSize: 17))
         return label
     }()
 

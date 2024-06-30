@@ -19,6 +19,9 @@
 		BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */; };
 		BA3D23CB2C03835B006DFCDA /* CustomTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CA2C03835B006DFCDA /* CustomTextFiled.swift */; };
 		BA3D23CD2C038B4C006DFCDA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D23CC2C038B4C006DFCDA /* CustomButton.swift */; };
+		BA4960E72C3199600066ED2D /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4960E62C3199600066ED2D /* CustomLabel.swift */; };
+		BA4960E92C319DA60066ED2D /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4960E82C319DA60066ED2D /* CustomSwitch.swift */; };
+		BA4960EB2C319E490066ED2D /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4960EA2C319E490066ED2D /* CustomStackView.swift */; };
 		BA4DE6982C1C1F5D0028A321 /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DE6972C1C1F5D0028A321 /* EmployeeViewController.swift */; };
 		BA4DE69A2C1C219B0028A321 /* Extension + TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DE6992C1C219B0028A321 /* Extension + TableViewCell.swift */; };
 		BA4DE69C2C1C22C00028A321 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4DE69B2C1C22C00028A321 /* EmployeeDetailViewController.swift */; };
@@ -66,6 +69,9 @@
 		BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCompanyViewController.swift; sourceTree = "<group>"; };
 		BA3D23CA2C03835B006DFCDA /* CustomTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFiled.swift; sourceTree = "<group>"; };
 		BA3D23CC2C038B4C006DFCDA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		BA4960E62C3199600066ED2D /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		BA4960E82C319DA60066ED2D /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
+		BA4960EA2C319E490066ED2D /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		BA4DE6972C1C1F5D0028A321 /* EmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
 		BA4DE6992C1C219B0028A321 /* Extension + TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TableViewCell.swift"; sourceTree = "<group>"; };
 		BA4DE69B2C1C22C00028A321 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +148,9 @@
 				BACA92142C04BB6900079927 /* TabBarViewController.swift */,
 				BA3D23CA2C03835B006DFCDA /* CustomTextFiled.swift */,
 				BA3D23CC2C038B4C006DFCDA /* CustomButton.swift */,
+				BA4960E62C3199600066ED2D /* CustomLabel.swift */,
+				BA4960E82C319DA60066ED2D /* CustomSwitch.swift */,
+				BA4960EA2C319E490066ED2D /* CustomStackView.swift */,
 				BACA92162C05E3A900079927 /* ProductCell.swift */,
 				BA4DE6992C1C219B0028A321 /* Extension + TableViewCell.swift */,
 				BA3D239A2C03614F006DFCDA /* Model.swift */,
@@ -301,6 +310,8 @@
 			files = (
 				BACA92152C04BB6900079927 /* TabBarViewController.swift in Sources */,
 				BA4DE69E2C1C32A30028A321 /* UserViewController.swift in Sources */,
+				BA4960E92C319DA60066ED2D /* CustomSwitch.swift in Sources */,
+				BA4960E72C3199600066ED2D /* CustomLabel.swift in Sources */,
 				BA3D23C92C037EDB006DFCDA /* AboutCompanyViewController.swift in Sources */,
 				BA94D4752C0F7E88004DF866 /* SectionHeader.swift in Sources */,
 				BA06EECC2C187EF60098A577 /* ResultsViewController.swift in Sources */,
@@ -315,6 +326,7 @@
 				BACA92172C05E3A900079927 /* ProductCell.swift in Sources */,
 				BA4DE69A2C1C219B0028A321 /* Extension + TableViewCell.swift in Sources */,
 				BA94D4772C105B40004DF866 /* DetailProductViewController.swift in Sources */,
+				BA4960EB2C319E490066ED2D /* CustomStackView.swift in Sources */,
 				BA3D23CB2C03835B006DFCDA /* CustomTextFiled.swift in Sources */,
 				BA4DE69C2C1C22C00028A321 /* EmployeeDetailViewController.swift in Sources */,
 			);
