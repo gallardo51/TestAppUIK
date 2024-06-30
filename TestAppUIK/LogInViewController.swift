@@ -8,43 +8,38 @@
 import UIKit
 
 class LogInViewController: UIViewController {
+    
     private lazy var logoImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "KerrLogo")
+        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    private lazy var logInTF: UITextField = {
-        let textField = TextFiledView()
-        textField.placeholder = "Ваш логин"
+    private lazy var logInTF: CustomTextFiled = {
+        let textField = CustomTextFiled(placeholderName: "Ваш логин")
         return textField
     }()
     
-    private lazy var passwordTF: UITextField = {
-        let textField = TextFiledView()
-        textField.placeholder = "Ваш пароль"
+    private lazy var passwordTF: CustomTextFiled = {
+        let textField = CustomTextFiled(placeholderName: "Ваш пароль")
         return textField
     }()
     
-    private lazy var logInButton: UIButton = {
-        let button = ButtonView()
-        button.setTitle("Войти", for: .normal)
+    private lazy var logInButton: CustomButton = {
+        let button = CustomButton(title: "Войти", color: .white, font: .boldSystemFont(ofSize: 20), background: .systemBlue)
         button.addTarget(self, action: #selector(enterInApp), for: .touchUpInside)
         return button
     }()
     
-    private lazy var forgetLoginButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Забыли логин?", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+    private lazy var forgetLoginButton: CustomButton = {
+        let button = CustomButton(title: "Забыли логин?", color: .systemBlue, font: .systemFont(ofSize: 15), background: .white)
         button.addTarget(self, action: #selector(enterInApp), for: .touchUpInside)
         return button
     }()
     
-    private lazy var forgetPasswordButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Забыли пароль?", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+    private lazy var forgetPasswordButton: CustomButton = {
+        let button = CustomButton(title: "Забыли пароль?", color: .systemBlue, font: .systemFont(ofSize: 15), background: .white)
         button.addTarget(self, action: #selector(enterInApp), for: .touchUpInside)
         return button
     }()
@@ -63,7 +58,6 @@ class LogInViewController: UIViewController {
     }
     
     private func setConstraints() {
-        logoImage.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             logoImage.heightAnchor.constraint(equalToConstant: 200),
@@ -72,15 +66,11 @@ class LogInViewController: UIViewController {
             logoImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60)
         ])
         
-        logInTF.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             logInTF.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 0),
             logInTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             logInTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
-        
-        passwordTF.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             passwordTF.topAnchor.constraint(equalTo: logInTF.bottomAnchor, constant: 20),
@@ -88,23 +78,17 @@ class LogInViewController: UIViewController {
             passwordTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
-        logInButton.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             logInButton.topAnchor.constraint(equalTo: passwordTF.bottomAnchor, constant: 40),
             logInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140),
             logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140)
         ])
         
-        forgetLoginButton.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             forgetLoginButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 40),
             forgetLoginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             forgetLoginButton.trailingAnchor.constraint(equalTo: forgetPasswordButton.leadingAnchor, constant: -50)
         ])
-        
-        forgetPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             forgetPasswordButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 40),

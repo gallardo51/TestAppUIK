@@ -25,7 +25,7 @@ class QuizViewController: UIViewController {
     }()
     
     private lazy var startQuiz: UIButton = {
-        let button = ButtonView()
+        let button = CustomButton()
         button.setTitle("Начать опрос", for: .normal)
         button.addTarget(self, action: #selector(enterInQuiz), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
