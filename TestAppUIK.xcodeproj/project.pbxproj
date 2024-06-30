@@ -133,30 +133,13 @@
 		BA3D23952C03614F006DFCDA /* TestAppUIK */ = {
 			isa = PBXGroup;
 			children = (
-				BA3D23962C03614F006DFCDA /* AppDelegate.swift */,
-				BA3D23C62C03626C006DFCDA /* LogInViewController.swift */,
-				BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */,
-				BA94D4742C0F7E88004DF866 /* SectionHeader.swift */,
-				BACA92122C04BA9900079927 /* ProductViewController.swift */,
-				BA94D4762C105B40004DF866 /* DetailProductViewController.swift */,
-				BAA5DA962C1468220095F6F8 /* QuizViewController.swift */,
-				BAA5DA982C15DE740095F6F8 /* QuestionsViewController.swift */,
-				BA06EECB2C187EF60098A577 /* ResultsViewController.swift */,
-				BA4DE6972C1C1F5D0028A321 /* EmployeeViewController.swift */,
-				BA4DE69B2C1C22C00028A321 /* EmployeeDetailViewController.swift */,
-				BA4DE69D2C1C32A30028A321 /* UserViewController.swift */,
-				BACA92142C04BB6900079927 /* TabBarViewController.swift */,
-				BA3D23CA2C03835B006DFCDA /* CustomTextFiled.swift */,
-				BA3D23CC2C038B4C006DFCDA /* CustomButton.swift */,
-				BA4960E62C3199600066ED2D /* CustomLabel.swift */,
-				BA4960E82C319DA60066ED2D /* CustomSwitch.swift */,
-				BA4960EA2C319E490066ED2D /* CustomStackView.swift */,
-				BACA92162C05E3A900079927 /* ProductCell.swift */,
-				BA4DE6992C1C219B0028A321 /* Extension + TableViewCell.swift */,
-				BA3D239A2C03614F006DFCDA /* Model.swift */,
-				BA3D239F2C036150006DFCDA /* Assets.xcassets */,
-				BA3D23A12C036150006DFCDA /* LaunchScreen.storyboard */,
-				BA3D23A42C036150006DFCDA /* Info.plist */,
+				BA4960EC2C31C7900066ED2D /* App */,
+				BA4960F22C31C80A0066ED2D /* ViewControllers */,
+				BA4960F12C31C7F40066ED2D /* Views */,
+				BA4960F02C31C7CE0066ED2D /* Extensions */,
+				BA4960EF2C31C7C60066ED2D /* Models */,
+				BA4960EE2C31C7BB0066ED2D /* Source */,
+				BA4960ED2C31C79D0066ED2D /* Storyboards */,
 			);
 			path = TestAppUIK;
 			sourceTree = "<group>";
@@ -176,6 +159,79 @@
 				BA3D23B92C036150006DFCDA /* TestAppUIKUITestsLaunchTests.swift */,
 			);
 			path = TestAppUIKUITests;
+			sourceTree = "<group>";
+		};
+		BA4960EC2C31C7900066ED2D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D23962C03614F006DFCDA /* AppDelegate.swift */,
+				BA3D23A42C036150006DFCDA /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BA4960ED2C31C79D0066ED2D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D23A12C036150006DFCDA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BA4960EE2C31C7BB0066ED2D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D239F2C036150006DFCDA /* Assets.xcassets */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BA4960EF2C31C7C60066ED2D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D239A2C03614F006DFCDA /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BA4960F02C31C7CE0066ED2D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA4DE6992C1C219B0028A321 /* Extension + TableViewCell.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BA4960F12C31C7F40066ED2D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA94D4742C0F7E88004DF866 /* SectionHeader.swift */,
+				BACA92142C04BB6900079927 /* TabBarViewController.swift */,
+				BA3D23CA2C03835B006DFCDA /* CustomTextFiled.swift */,
+				BA3D23CC2C038B4C006DFCDA /* CustomButton.swift */,
+				BA4960E62C3199600066ED2D /* CustomLabel.swift */,
+				BA4960E82C319DA60066ED2D /* CustomSwitch.swift */,
+				BA4960EA2C319E490066ED2D /* CustomStackView.swift */,
+				BACA92162C05E3A900079927 /* ProductCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA4960F22C31C80A0066ED2D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA3D23C62C03626C006DFCDA /* LogInViewController.swift */,
+				BA3D23C82C037EDB006DFCDA /* AboutCompanyViewController.swift */,
+				BACA92122C04BA9900079927 /* ProductViewController.swift */,
+				BA94D4762C105B40004DF866 /* DetailProductViewController.swift */,
+				BAA5DA962C1468220095F6F8 /* QuizViewController.swift */,
+				BAA5DA982C15DE740095F6F8 /* QuestionsViewController.swift */,
+				BA06EECB2C187EF60098A577 /* ResultsViewController.swift */,
+				BA4DE6972C1C1F5D0028A321 /* EmployeeViewController.swift */,
+				BA4DE69B2C1C22C00028A321 /* EmployeeDetailViewController.swift */,
+				BA4DE69D2C1C32A30028A321 /* UserViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,7 +560,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LBC2FW8GZY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TestAppUIK/Info.plist;
+				INFOPLIST_FILE = TestAppUIK/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
@@ -531,7 +587,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LBC2FW8GZY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TestAppUIK/Info.plist;
+				INFOPLIST_FILE = TestAppUIK/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
