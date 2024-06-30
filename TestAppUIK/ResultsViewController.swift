@@ -36,6 +36,7 @@ class ResultsViewController: UIViewController {
         return button
     }()
     
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +45,6 @@ class ResultsViewController: UIViewController {
         updateUI(with: answers)
         setupSubviews(viewTitle, questionLabel, quiteQuiz)
         setConstraints()
-        
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -67,10 +67,11 @@ class ResultsViewController: UIViewController {
         constraints.append(quiteQuiz.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 40))
         constraints.append(quiteQuiz.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
         constraints.append(quiteQuiz.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
-    
+        
         NSLayoutConstraint.activate(constraints)
     }
     
+    // MARK: - Private Methods
     private func updateUI(with answer: [Answer]) {
         
         let first = answer.filter { $0.questionNumber == .q1 }

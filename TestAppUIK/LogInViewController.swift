@@ -44,6 +44,7 @@ class LogInViewController: UIViewController {
         return button
     }()
     
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,7 +92,7 @@ class LogInViewController: UIViewController {
         constraints.append(forgetPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
         NSLayoutConstraint.activate(constraints)
-
+        
     }
     
     @objc private func enterInApp() {

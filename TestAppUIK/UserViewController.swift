@@ -48,7 +48,8 @@ class UserViewController: UIViewController {
             textFont: .systemFont(ofSize: 17))
         return label
     }()
-
+    
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,7 +90,7 @@ class UserViewController: UIViewController {
         constraints.append(emailUser.topAnchor.constraint(equalTo: cellphoneUser.bottomAnchor, constant: 20))
         constraints.append(emailUser.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
         constraints.append(emailUser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
-    
+        
         NSLayoutConstraint.activate(constraints)
     }
 }

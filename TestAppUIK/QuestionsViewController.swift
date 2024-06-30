@@ -178,6 +178,7 @@ class QuestionsViewController: UIViewController {
         return button
     }()
     
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -301,6 +302,7 @@ class QuestionsViewController: UIViewController {
     }
 }
 
+// MARK: - Private Methods
 extension QuestionsViewController {
     private func updateUI() {
         
@@ -313,6 +315,5 @@ extension QuestionsViewController {
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         
         addAnswers(with: currentAnswers)
-        
     }
 }

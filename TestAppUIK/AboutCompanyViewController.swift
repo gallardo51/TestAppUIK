@@ -55,6 +55,7 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
         return label
     }()
     
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         

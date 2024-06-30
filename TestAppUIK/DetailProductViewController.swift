@@ -53,6 +53,7 @@ class DetailProductViewController: UIViewController, UIScrollViewDelegate {
         return label
     }()
     
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,7 +61,7 @@ class DetailProductViewController: UIViewController, UIScrollViewDelegate {
         
         title = "\(item.name)"
         setCustomBackButton()
-
+        
         setupSubviews(verticalScrollView, productImage, productTitle, productDescription, productAdvantage)
         setConstraints()
         
@@ -68,6 +69,7 @@ class DetailProductViewController: UIViewController, UIScrollViewDelegate {
             width: verticalScrollView.frame.width,
             height: 1600
         )
+        
         self.verticalScrollView.addSubview(productImage)
         self.verticalScrollView.addSubview(productTitle)
         self.verticalScrollView.addSubview(productDescription)
@@ -93,7 +95,6 @@ class DetailProductViewController: UIViewController, UIScrollViewDelegate {
             action: #selector(backAction)
         )
         navigationController?.navigationBar.topItem?.backBarButtonItem = newBackButton
-    
     }
     
     @objc func backAction() {

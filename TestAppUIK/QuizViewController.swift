@@ -36,7 +36,8 @@ class QuizViewController: UIViewController {
         button.addTarget(self, action: #selector(enterInQuiz), for: .touchUpInside)
         return button
     }()
-
+    
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +48,6 @@ class QuizViewController: UIViewController {
         
         setupSubviews(quizImage, supportText, startQuiz)
         setConstraints()
-        
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -79,5 +79,4 @@ class QuizViewController: UIViewController {
         let questionsVC = QuestionsViewController()
         show(questionsVC, sender: self)
     }
-
 }

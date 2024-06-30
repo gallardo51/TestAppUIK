@@ -50,7 +50,8 @@ class EmployeeDetailViewController: UIViewController {
             textFont: .systemFont(ofSize: 17))
         return label
     }()
-
+    
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,7 +78,6 @@ class EmployeeDetailViewController: UIViewController {
             action: #selector(backAction)
         )
         navigationController?.navigationBar.topItem?.backBarButtonItem = newBackButton
-    
     }
     
     @objc func backAction() {
@@ -107,7 +107,7 @@ class EmployeeDetailViewController: UIViewController {
         constraints.append(emailTitle.topAnchor.constraint(equalTo: cellphoneTitle.bottomAnchor, constant: 20))
         constraints.append(emailTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
         constraints.append(emailTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
-    
+        
         NSLayoutConstraint.activate(constraints)
     }
 }

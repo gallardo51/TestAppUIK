@@ -13,6 +13,7 @@ class ProductCollectionViewController: UIViewController {
     
     var productCollectionView: UICollectionView?
     
+    //MARK: Private properties
     private var products = Product.getProduct()
     private var filteredProducts: [Item] = []
     
@@ -25,7 +26,7 @@ class ProductCollectionViewController: UIViewController {
         return searchController.isActive && !searchBarIsEmpty
     }
     
-    
+    // MARK: - UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +37,6 @@ class ProductCollectionViewController: UIViewController {
         
         setCollectionView()
         setupSearchController()
-        
     }
     
     private func setCollectionView() {
@@ -70,6 +70,7 @@ class ProductCollectionViewController: UIViewController {
     }
 }
 
+// MARK: - Collection View Data Source
 extension ProductCollectionViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -108,6 +109,8 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
     }
     
 }
+
+// MARK: - Collection View Delegate
 extension ProductCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailProductViewController()
@@ -117,6 +120,7 @@ extension ProductCollectionViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UISearchResultsUpdating
 extension ProductCollectionViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -132,7 +136,8 @@ extension ProductCollectionViewController: UISearchResultsUpdating {
         productCollectionView?.reloadData()
         print(filteredProducts)
     }
-        
+    
+    // MARK: - Private methods
     private func setupSearchController() {
         
         searchController.searchResultsUpdater = self
