@@ -24,45 +24,23 @@ class QuizViewController: UIViewController {
         return label
     }()
     
-    private lazy var startQuiz: UIButton = {
-        let button = CustomButton()
-        button.setTitle("Начать опрос", for: .normal)
+    private lazy var startQuiz: CustomButton = {
+        let button = CustomButton(title: "Начать опрос", color: .white, font: .boldSystemFont(ofSize: 20), background: .systemBlue)
         button.addTarget(self, action: #selector(enterInQuiz), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
-        setNavBar()
+        
+        title = "Опрос"
+        navigationItem.hidesBackButton = true
+        
         setupSubviews(quizImage, supportText, startQuiz)
         setConstraints()
         
-    }
-    
-    private func setNavBar() {
-        title = "Опрос"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        navBarAppearance.backgroundColor = UIColor(
-            red: 21/255,
-            green: 101/255,
-            blue: 192/255,
-            alpha: 194/255
-        )
-        
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
-        navigationItem.hidesBackButton = true
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -72,26 +50,22 @@ class QuizViewController: UIViewController {
     }
     
     private func setConstraints() {
+        var constraints = [NSLayoutConstraint]()
         
-        NSLayoutConstraint.activate([
-            quizImage.heightAnchor.constraint(equalToConstant: 140),
-            quizImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
-            quizImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 120),
-            quizImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -120)
-        ])
+        constraints.append(quizImage.heightAnchor.constraint(equalToConstant: 140))
+        constraints.append(quizImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 160))
+        constraints.append(quizImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 120))
+        constraints.append(quizImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -120))
         
+        constraints.append(supportText.topAnchor.constraint(equalTo: quizImage.bottomAnchor, constant: 20))
+        constraints.append(supportText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(supportText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
         
-        NSLayoutConstraint.activate([
-            supportText.topAnchor.constraint(equalTo: quizImage.bottomAnchor, constant: 20),
-            supportText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            supportText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-        ])
+        constraints.append(startQuiz.topAnchor.constraint(equalTo: supportText.bottomAnchor, constant: 40))
+        constraints.append(startQuiz.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 120))
+        constraints.append(startQuiz.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -120))
         
-        NSLayoutConstraint.activate([
-            startQuiz.topAnchor.constraint(equalTo: supportText.bottomAnchor, constant: 40),
-            startQuiz.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 120),
-            startQuiz.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -120)
-        ])
+        NSLayoutConstraint.activate(constraints)
     }
     
     @objc private func enterInQuiz() {

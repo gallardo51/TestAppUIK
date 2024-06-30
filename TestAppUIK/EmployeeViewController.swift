@@ -14,35 +14,14 @@ class EmployeeViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
-        tableView.rowHeight = 80
-        setNavBar()
-    }
-    
-    private func setNavBar() {
+        
         title = "Сотрудники"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        navBarAppearance.backgroundColor = UIColor(
-            red: 21/255,
-            green: 101/255,
-            blue: 192/255,
-            alpha: 194/255
-        )
-        
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
         navigationItem.hidesBackButton = true
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.rowHeight = 80
     }
 
     // MARK: - Table view data source

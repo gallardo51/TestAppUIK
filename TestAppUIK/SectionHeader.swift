@@ -31,6 +31,7 @@ class SectionHeader: UICollectionReusableView {
         addSubview(title)
         
         NSLayoutConstraint.activate([
+            title.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 30),
             title.heightAnchor.constraint(equalToConstant: 40),
             title.widthAnchor.constraint(equalToConstant: 400),
         ])

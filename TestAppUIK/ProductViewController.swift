@@ -28,7 +28,12 @@ class ProductCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavBar()
+        
+        view.backgroundColor = .white
+        
+        title = "Продукты"
+        navigationItem.hidesBackButton = true
+        
         setCollectionView()
         setupSearchController()
         
@@ -37,7 +42,6 @@ class ProductCollectionViewController: UIViewController {
     private func setCollectionView() {
         
         let view = UIView()
-        view.backgroundColor = .white
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -61,30 +65,6 @@ class ProductCollectionViewController: UIViewController {
         
     }
     
-    private func setNavBar() {
-        title = "Продукты"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        navBarAppearance.backgroundColor = UIColor(
-            red: 21/255,
-            green: 101/255,
-            blue: 192/255,
-            alpha: 194/255
-        )
-        
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
-        navigationItem.hidesBackButton = true
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -99,7 +79,7 @@ extension ProductCollectionViewController: UICollectionViewDataSource {
             withReuseIdentifier: SectionHeader.reuserId,
             for: indexPath
         ) as? SectionHeader {
-            sectionHeader.title.text = isFiltering ? " " : "      \(products[indexPath.section].nameOfGroup)"
+            sectionHeader.title.text = isFiltering ? " " : "\(products[indexPath.section].nameOfGroup)"
             return sectionHeader
         }
         return UICollectionReusableView()

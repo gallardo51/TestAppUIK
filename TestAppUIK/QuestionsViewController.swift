@@ -237,33 +237,12 @@ class QuestionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
-        setNavBar()
+        
         setupSubviews(progressView, questionLabel, stackView1, stackView2, stackView3, stackView4, stackView5, stackView6, stackView7, stackView8, nextQuestionButton)
         setConstraints()
         updateUI()
-    }
-    
-    private func setNavBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        navBarAppearance.backgroundColor = UIColor(
-            red: 21/255,
-            green: 101/255,
-            blue: 192/255,
-            alpha: 194/255
-        )
-        
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -285,73 +264,53 @@ class QuestionsViewController: UIViewController {
     }
     
     private func setConstraints() {
+        var constraints = [NSLayoutConstraint]()
         
-        NSLayoutConstraint.activate([
-            progressView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-            progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -10),
-            progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: +10)
-        ])
+        constraints.append(progressView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150))
+        constraints.append(progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -10))
+        constraints.append(progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: +10))
         
-        NSLayoutConstraint.activate([
-            questionLabel.topAnchor.constraint(equalTo: progressView.bottomAnchor, constant: 10),
-            questionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            questionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(questionLabel.topAnchor.constraint(equalTo: progressView.bottomAnchor, constant: 10))
+        constraints.append(questionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(questionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
         
-        NSLayoutConstraint.activate([
-            stackView1.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 60),
-            stackView1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(stackView1.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 60))
+        constraints.append(stackView1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(stackView1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            stackView2.topAnchor.constraint(equalTo: stackView1.bottomAnchor, constant: 10),
-            stackView2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(stackView2.topAnchor.constraint(equalTo: stackView1.bottomAnchor, constant: 10))
+        constraints.append(stackView2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(stackView2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            stackView3.topAnchor.constraint(equalTo: stackView2.bottomAnchor, constant: 10),
-            stackView3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView3.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(stackView3.topAnchor.constraint(equalTo: stackView2.bottomAnchor, constant: 10))
+        constraints.append(stackView3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(stackView3.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            stackView4.topAnchor.constraint(equalTo: stackView3.bottomAnchor, constant: 10),
-            stackView4.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView4.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(stackView4.topAnchor.constraint(equalTo: stackView3.bottomAnchor, constant: 10))
+        constraints.append(stackView4.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(stackView4.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            stackView5.topAnchor.constraint(equalTo: stackView4.bottomAnchor, constant: 10),
-            stackView5.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView5.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(stackView5.topAnchor.constraint(equalTo: stackView4.bottomAnchor, constant: 10))
+        constraints.append(stackView5.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(stackView5.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            stackView6.topAnchor.constraint(equalTo: stackView5.bottomAnchor, constant: 10),
-            stackView6.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView6.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(stackView6.topAnchor.constraint(equalTo: stackView5.bottomAnchor, constant: 10))
+        constraints.append(stackView6.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(stackView6.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            stackView7.topAnchor.constraint(equalTo: stackView6.bottomAnchor, constant: 10),
-            stackView7.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView7.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(stackView7.topAnchor.constraint(equalTo: stackView6.bottomAnchor, constant: 10))
+        constraints.append(stackView7.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(stackView7.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            stackView8.topAnchor.constraint(equalTo: stackView7.bottomAnchor, constant: 10),
-            stackView8.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView8.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(stackView8.topAnchor.constraint(equalTo: stackView7.bottomAnchor, constant: 10))
+        constraints.append(stackView8.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(stackView8.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            nextQuestionButton.topAnchor.constraint(equalTo: stackView8.bottomAnchor, constant: 40),
-            nextQuestionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            nextQuestionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60)
-        ])
+        constraints.append(nextQuestionButton.topAnchor.constraint(equalTo: stackView8.bottomAnchor, constant: 40))
+        constraints.append(nextQuestionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60))
+        constraints.append(nextQuestionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60))
         
+        NSLayoutConstraint.activate(constraints)
     }
     
     @objc private func answerButtonPressed() {

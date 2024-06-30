@@ -53,8 +53,11 @@ class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
-        setNavBar()
+        
+        title = "Пользователь"
+        
         setupSubviews(userImage, userFullName, birthdayDate, cellphoneUser, emailUser)
         setConstraints()
     }
@@ -65,61 +68,30 @@ class UserViewController: UIViewController {
         }
     }
     
-    private func setNavBar() {
-        title = "Пользователь"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        navBarAppearance.backgroundColor = UIColor(
-            red: 21/255,
-            green: 101/255,
-            blue: 192/255,
-            alpha: 194/255
-        )
-        
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
-    }
-    
     private func setConstraints() {
+        var constraints = [NSLayoutConstraint]()
         
-        NSLayoutConstraint.activate([
-            userImage.heightAnchor.constraint(equalToConstant: 200),
-            userImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 170),
-            userImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            userImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60)
-        ])
+        constraints.append(userImage.heightAnchor.constraint(equalToConstant: 200))
+        constraints.append(userImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 170))
+        constraints.append(userImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60))
+        constraints.append(userImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60))
         
-        NSLayoutConstraint.activate([
-            userFullName.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: 20),
-            userFullName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            userFullName.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(userFullName.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: 20))
+        constraints.append(userFullName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(userFullName.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
         
-        NSLayoutConstraint.activate([
-            birthdayDate.topAnchor.constraint(equalTo: userFullName.bottomAnchor, constant: 40),
-            birthdayDate.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            birthdayDate.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(birthdayDate.topAnchor.constraint(equalTo: userFullName.bottomAnchor, constant: 40))
+        constraints.append(birthdayDate.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(birthdayDate.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
         
-        NSLayoutConstraint.activate([
-            cellphoneUser.topAnchor.constraint(equalTo: birthdayDate.bottomAnchor, constant: 20),
-            cellphoneUser.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            cellphoneUser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(cellphoneUser.topAnchor.constraint(equalTo: birthdayDate.bottomAnchor, constant: 20))
+        constraints.append(cellphoneUser.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(cellphoneUser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
         
-        NSLayoutConstraint.activate([
-            emailUser.topAnchor.constraint(equalTo: cellphoneUser.bottomAnchor, constant: 20),
-            emailUser.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            emailUser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(emailUser.topAnchor.constraint(equalTo: cellphoneUser.bottomAnchor, constant: 20))
+        constraints.append(emailUser.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(emailUser.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
+    
+        NSLayoutConstraint.activate(constraints)
     }
-
 }

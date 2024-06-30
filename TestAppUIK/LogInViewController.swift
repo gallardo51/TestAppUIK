@@ -46,7 +46,10 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
+        navigationController?.navigationBar.isHidden = true
+        
         setupSubviews(logoImage, logInTF, passwordTF, logInButton, forgetLoginButton, forgetPasswordButton)
         setConstraints()
     }
@@ -58,43 +61,37 @@ class LogInViewController: UIViewController {
     }
     
     private func setConstraints() {
+        var constraints = [NSLayoutConstraint]()
         
-        NSLayoutConstraint.activate([
-            logoImage.heightAnchor.constraint(equalToConstant: 200),
-            logoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
-            logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            logoImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60)
-        ])
+        constraints.append(logoImage.heightAnchor.constraint(equalToConstant: 200))
+        constraints.append(logoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 120))
+        constraints.append(logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60))
+        constraints.append(logoImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60))
         
-        NSLayoutConstraint.activate([
-            logInTF.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 0),
-            logInTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            logInTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        // TextFields
+        constraints.append(logInTF.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 0))
+        constraints.append(logInTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(logInTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            passwordTF.topAnchor.constraint(equalTo: logInTF.bottomAnchor, constant: 20),
-            passwordTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            passwordTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(passwordTF.topAnchor.constraint(equalTo: logInTF.bottomAnchor, constant: 20))
+        constraints.append(passwordTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(passwordTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
         
-        NSLayoutConstraint.activate([
-            logInButton.topAnchor.constraint(equalTo: passwordTF.bottomAnchor, constant: 40),
-            logInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140),
-            logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140)
-        ])
+        // Buttons
+        constraints.append(logInButton.topAnchor.constraint(equalTo: passwordTF.bottomAnchor, constant: 40))
+        constraints.append(logInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140))
+        constraints.append(logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140))
         
-        NSLayoutConstraint.activate([
-            forgetLoginButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 40),
-            forgetLoginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            forgetLoginButton.trailingAnchor.constraint(equalTo: forgetPasswordButton.leadingAnchor, constant: -50)
-        ])
+        constraints.append(forgetLoginButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 40))
+        constraints.append(forgetLoginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40))
+        constraints.append(forgetLoginButton.trailingAnchor.constraint(equalTo: forgetPasswordButton.leadingAnchor, constant: -50))
         
-        NSLayoutConstraint.activate([
-            forgetPasswordButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 40),
-            forgetPasswordButton.leadingAnchor.constraint(equalTo: forgetLoginButton.trailingAnchor, constant: 50),
-            forgetPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-        ])
+        constraints.append(forgetPasswordButton.topAnchor.constraint(equalTo: logInButton.bottomAnchor, constant: 40))
+        constraints.append(forgetPasswordButton.leadingAnchor.constraint(equalTo: forgetLoginButton.trailingAnchor, constant: 50))
+        constraints.append(forgetPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40))
+        
+        NSLayoutConstraint.activate(constraints)
+
     }
     
     @objc private func enterInApp() {

@@ -39,7 +39,9 @@ class ResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
+        
         updateUI(with: answers)
         setupSubviews(viewTitle, questionLabel, quiteQuiz)
         setConstraints()
@@ -53,25 +55,21 @@ class ResultsViewController: UIViewController {
     }
     
     private func setConstraints() {
+        var constraints = [NSLayoutConstraint]()
         
-        NSLayoutConstraint.activate([
-            viewTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            viewTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            viewTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(viewTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 50))
+        constraints.append(viewTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(viewTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
         
-        NSLayoutConstraint.activate([
-            questionLabel.topAnchor.constraint(equalTo: viewTitle.bottomAnchor, constant: 20),
-            questionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            questionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(questionLabel.topAnchor.constraint(equalTo: viewTitle.bottomAnchor, constant: 20))
+        constraints.append(questionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(questionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
         
-        NSLayoutConstraint.activate([
-            quiteQuiz.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 40),
-            quiteQuiz.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            quiteQuiz.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
-        
+        constraints.append(quiteQuiz.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 40))
+        constraints.append(quiteQuiz.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(quiteQuiz.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
+    
+        NSLayoutConstraint.activate(constraints)
     }
     
     private func updateUI(with answer: [Answer]) {

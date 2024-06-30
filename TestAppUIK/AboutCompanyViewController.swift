@@ -48,8 +48,12 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
-        setNavBar()
+        
+        title = "О компании"
+        navigationItem.hidesBackButton = true
+        
         setupSubviews(verticalScrollView)
         setupDiscountScrollView()
         setupVerticalScrollView()
@@ -70,30 +74,6 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
         subviews.forEach { subview in
             view.addSubview(subview)
         }
-    }
-    
-    private func setNavBar() {
-        title = "О компании"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        navBarAppearance.backgroundColor = UIColor(
-            red: 21/255,
-            green: 101/255,
-            blue: 192/255,
-            alpha: 194/255
-        )
-        
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        
-        navigationItem.hidesBackButton = true
     }
     
     private func setupDiscountScrollView() {
@@ -129,25 +109,22 @@ class AboutCompanyViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setConstraints() {
+        var constraints = [NSLayoutConstraint]()
         
-        NSLayoutConstraint.activate([
-            verticalScrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            verticalScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            verticalScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            verticalScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-        ])
+        constraints.append(verticalScrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0))
+        constraints.append(verticalScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0))
+        constraints.append(verticalScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0))
+        constraints.append(verticalScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0))
         
-        NSLayoutConstraint.activate([
-            pageControl.topAnchor.constraint(equalTo: verticalScrollView.topAnchor, constant: 130),
-            pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(pageControl.topAnchor.constraint(equalTo: verticalScrollView.topAnchor, constant: 130))
+        constraints.append(pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
         
-        NSLayoutConstraint.activate([
-            aboutCompanyText.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 10),
-            aboutCompanyText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            aboutCompanyText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
+        constraints.append(aboutCompanyText.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 10))
+        constraints.append(aboutCompanyText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
+        constraints.append(aboutCompanyText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20))
+        
+        NSLayoutConstraint.activate(constraints)
     }
 }
 
