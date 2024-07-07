@@ -34,13 +34,13 @@ class LogInViewController: UIViewController {
     
     private lazy var forgetLoginButton: CustomButton = {
         let button = CustomButton(title: "Забыли логин?", color: .systemBlue, font: .systemFont(ofSize: 15), background: .white)
-        button.addTarget(self, action: #selector(enterInApp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(forgetLogin), for: .touchUpInside)
         return button
     }()
     
     private lazy var forgetPasswordButton: CustomButton = {
         let button = CustomButton(title: "Забыли пароль?", color: .systemBlue, font: .systemFont(ofSize: 15), background: .white)
-        button.addTarget(self, action: #selector(enterInApp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(forgetPassword), for: .touchUpInside)
         return button
     }()
     
@@ -99,5 +99,45 @@ class LogInViewController: UIViewController {
         let tabBarVC = TabBarViewController()
         tabBarVC.modalPresentationStyle = .fullScreen
         present(tabBarVC, animated: true)
+    }
+    
+    @objc private func forgetLogin() {
+        showAlert(title: "⚠️", message: "Ваш логин: User 😉")
+    }
+    
+    @objc private func forgetPassword() {
+        showAlert(title: "⚠️", message: "Ваш пароль: Password 😎")
+    }
+}
+
+// MARK: - Alert Controller
+extension LogInViewController {
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = ""
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - Keyboard Settings
+extension LogInViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == logInTF {
+            passwordTF.becomeFirstResponder()
+        } else {
+            enterInApp()
+            let tabBarVC = TabBarViewController()
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC, animated: true)
+        }
+        return true
     }
 }
