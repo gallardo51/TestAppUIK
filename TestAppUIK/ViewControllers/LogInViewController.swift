@@ -106,22 +106,25 @@ class LogInViewController: UIViewController {
         if logInTF.text != user.login || passwordTF.text != user.password {
             showAlert(
                 title: "❌ \nНеправильный логин или пароль",
-                message: "Пожалуйста, введите логин и пароль",
+                message: "Пожалуйста, введите правильный логин и пароль",
                 textField: passwordTF
             )
         } else {
             let tabBarVC = TabBarViewController()
+            let navVC = tabBarVC.viewControllers![4] as! UINavigationController
+            let userVC = navVC.topViewController as? UserViewController
+            userVC?.user = user
             tabBarVC.modalPresentationStyle = .fullScreen
             present(tabBarVC, animated: true)
         }
     }
     
     @objc private func forgetLogin() {
-        showAlert(title: "⚠️", message: "Ваш логин: User 😉")
+        showAlert(title: "⚠️", message: "Ваш логин: Alex 😉")
     }
     
     @objc private func forgetPassword() {
-        showAlert(title: "⚠️", message: "Ваш пароль: Password 😎")
+        showAlert(title: "⚠️", message: "Ваш пароль: alex 😎")
     }
 }
 
@@ -149,9 +152,6 @@ extension LogInViewController: UITextFieldDelegate {
             passwordTF.becomeFirstResponder()
         } else {
             enterInApp()
-            let tabBarVC = TabBarViewController()
-            tabBarVC.modalPresentationStyle = .fullScreen
-            present(tabBarVC, animated: true)
         }
         return true
     }

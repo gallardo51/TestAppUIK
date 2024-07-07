@@ -288,16 +288,16 @@ struct Subject {
     let email: String
     
     var fullName: String {
-        "ФИО: \(name) \(surname)"
+        "\(name) \(surname)"
     }
     
     static func getSubject() -> Subject {
         Subject(
             name: "Александр",
             surname: "Соболев",
-            userImage: "AlexPH",
+            userImage: "Alex",
             bornDate: "Дата рождения: 08.07.1988",
-            cellPhone: "Телефон: 89610297502",
+            cellPhone: "Телефон: +7 961 029 75 02",
             email: "Почта: 31108@mail.ru"
         )
     }

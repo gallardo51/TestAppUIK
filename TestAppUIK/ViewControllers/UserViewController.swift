@@ -9,17 +9,20 @@ import UIKit
 
 class UserViewController: UIViewController {
     
+    var user: User!
+    
     private lazy var userImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "person.fill")
-        image.contentMode = .scaleAspectFit
+        image.image = UIImage(named: user.subject.userImage)
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.layer.cornerRadius = 20
+        image.layer.masksToBounds = true
         return image
     }()
     
     private lazy var userFullName: CustomLabel = {
         let label = CustomLabel(
-            title: "Александр Соболев",
+            title: "\(user.subject.fullName)",
             alignment: .center,
             textFont: .boldSystemFont(ofSize: 20.0))
         return label
@@ -27,7 +30,7 @@ class UserViewController: UIViewController {
     
     private lazy var birthdayDate: CustomLabel = {
         let label = CustomLabel(
-            title: "08.07.1988",
+            title: "\(user.subject.bornDate)",
             alignment: .natural,
             textFont: .systemFont(ofSize: 17))
         return label
@@ -35,7 +38,7 @@ class UserViewController: UIViewController {
     
     private lazy var cellphoneUser: CustomLabel = {
         let label = CustomLabel(
-            title: "+7 961 029 75 02",
+            title: "\(user.subject.cellPhone)",
             alignment: .natural,
             textFont: .systemFont(ofSize: 17))
         return label
@@ -43,7 +46,7 @@ class UserViewController: UIViewController {
     
     private lazy var emailUser: CustomLabel = {
         let label = CustomLabel(
-            title: "31108@mail.ru",
+            title: "\(user.subject.email)",
             alignment: .natural,
             textFont: .systemFont(ofSize: 17))
         return label
@@ -71,9 +74,9 @@ class UserViewController: UIViewController {
         var constraints = [NSLayoutConstraint]()
         
         constraints.append(userImage.heightAnchor.constraint(equalToConstant: 200))
+        constraints.append(userImage.widthAnchor.constraint(equalToConstant: 200))
         constraints.append(userImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 170))
-        constraints.append(userImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60))
-        constraints.append(userImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60))
+        constraints.append(userImage.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0))
         
         constraints.append(userFullName.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: 20))
         constraints.append(userFullName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20))
