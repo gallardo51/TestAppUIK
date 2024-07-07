@@ -272,8 +272,8 @@ struct User {
     
     static func getUserData() -> User {
         User(
-            login: "User",
-            password: "Password",
+            login: "1",
+            password: "1",
             subject: Subject.getSubject()
         )
     }

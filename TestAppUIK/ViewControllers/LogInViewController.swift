@@ -9,6 +9,8 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    private let user = User.getUserData()
+    
     private lazy var logoImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "KerrLogo")
@@ -23,6 +25,8 @@ class LogInViewController: UIViewController {
     
     private lazy var passwordTF: CustomTextFiled = {
         let textField = CustomTextFiled(placeholderName: "Ваш пароль")
+        textField.isSecureTextEntry = true
+        textField.returnKeyType = .done
         return textField
     }()
     
@@ -50,6 +54,9 @@ class LogInViewController: UIViewController {
         
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
+        
+        logInTF.delegate = self
+        passwordTF.delegate = self
         
         setupSubviews(logoImage, logInTF, passwordTF, logInButton, forgetLoginButton, forgetPasswordButton)
         setConstraints()
@@ -96,9 +103,17 @@ class LogInViewController: UIViewController {
     }
     
     @objc private func enterInApp() {
-        let tabBarVC = TabBarViewController()
-        tabBarVC.modalPresentationStyle = .fullScreen
-        present(tabBarVC, animated: true)
+        if logInTF.text != user.login || passwordTF.text != user.password {
+            showAlert(
+                title: "❌ \nНеправильный логин или пароль",
+                message: "Пожалуйста, введите логин и пароль",
+                textField: passwordTF
+            )
+        } else {
+            let tabBarVC = TabBarViewController()
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC, animated: true)
+        }
     }
     
     @objc private func forgetLogin() {

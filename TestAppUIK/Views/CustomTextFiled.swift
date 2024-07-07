@@ -18,6 +18,9 @@ class CustomTextFiled: UITextField {
         
         placeholder = placeholderName
         borderStyle = .roundedRect
+        clearButtonMode = .always
+        returnKeyType = .next
+        enablesReturnKeyAutomatically = true
         translatesAutoresizingMaskIntoConstraints = false
     }
     
