@@ -246,15 +246,15 @@ struct JobPerson {
     static func getEmployee() -> [JobPerson] {
         [
             JobPerson(
-                regionName: "ЦФО",
+                regionName: "Центральный Федеральный Округ",
                 employee:
                     [
-                        Employee(name: "Роман", surname: "Григорьев", post: "Руководитель отдела продаж Kerr РФ", cellPhone: "☎️ + 7 (925) 007 01 25", email: "📨 roman.grigoriev@envistaco.com"),
+                        Employee(name: "Роман", surname: "Григорьев", post: "Коммерческий директор Kerr РФ", cellPhone: "☎️ + 7 (925) 007 01 25", email: "📨 roman.grigoriev@envistaco.com"),
                         Employee(name: "Александр", surname: "Соболев", post: "Руководитель отдела продаж в Москве и ЦФО", cellPhone: "☎️ + 7 (926) 780 60 28", email: "📨 aleksander.sobolev@envistaco.com")
                     ]
             ),
             JobPerson(
-                regionName: "СЗФО",
+                regionName: "Северо-Западный Федеральный Округ",
                 employee:
                     [
                         Employee(name: "Артем", surname: "Дубровский", post: "Менеджер по работе с ключевыми клиентами ЦФО", cellPhone: "☎️ + 7 (926) 900 43 19", email: "📨 artem.dubrovskiy@envistaco.com"),
@@ -262,7 +262,7 @@ struct JobPerson {
                     ]
             ),
             JobPerson(
-                regionName: "ЮФО",
+                regionName: "Поволжский Федеральный Округ",
                 employee:
                     [
                         Employee(name: "Дарья", surname: "Бокачева", post: "Региональный торговый представитель ЦФО", cellPhone: "☎️ + 7 (926) 013 00 86", email: "📨 daria.bokacheva@envistaco.com"),
@@ -270,7 +270,7 @@ struct JobPerson {
                     ]
             ),
             JobPerson(
-                regionName: "УФО",
+                regionName: "Южный Федеральный Округ",
                 employee: [
                     Employee(name: "Илья", surname: "Ульянов", post: "Региональный торговый представитель ЦФО", cellPhone: "☎️ + 7 (929) 585 05 02", email: "📨 ilya.uljyanov@envistaco.com")
                 ]
