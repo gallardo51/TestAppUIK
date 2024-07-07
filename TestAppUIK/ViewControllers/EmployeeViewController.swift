@@ -9,7 +9,7 @@ import UIKit
 
 class EmployeeViewController: UITableViewController {
     
-    private var employeeList = Employee.getEmployee()
+    private var employeeList = JobPerson.getEmployee()
     private let cellID = "CurrentEmployee"
     
     // MARK: - UIViewController Methods
@@ -27,17 +27,21 @@ class EmployeeViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    //    override func numberOfSections(in tableView: UITableView) -> Int {
-    //        return 0
-    //    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        employeeList.map(\.regionName).count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        employeeList[section].regionName
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        employeeList.count
+        employeeList[section].employee.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        let employeeList = employeeList[indexPath.row]
+        let employeeList = employeeList[indexPath.section].employee[indexPath.row]
         cell.configure(with: employeeList)
         return cell
     }
@@ -45,7 +49,7 @@ class EmployeeViewController: UITableViewController {
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let employeeDetailVC = EmployeeDetailViewController()
-        let employeeList = employeeList[indexPath.row]
+        let employeeList = employeeList[indexPath.section].employee[indexPath.row]
         employeeDetailVC.employeeList = employeeList
         show(employeeDetailVC, sender: employeeList)
         tableView.deselectRow(at: indexPath, animated: true)
